@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ptuteam/newgame/issues"
   },
-  "homepage": "https://github.com/ptuteam/newgame#readme"
+  "homepage": "https://github.com/ptuteam/newgame#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
