@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/runt,node,osx
 
 #!! ERROR: runt is undefined. Use list command to see defined gitignore types !!#
@@ -58,3 +59,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+=======
+node_modules
+>>>>>>> tp/v2
