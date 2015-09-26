@@ -4,7 +4,7 @@
 			<h1 class="container-header__title">Рекорды</h1>
 		</div>
 		<div class="container-menu">
-			<div class="container-menu__button js-back">Назад</div>
+			<div class="container-menu__menu-button js-back">Назад</div>
 		</div>
 	</div>
 </fest:template>

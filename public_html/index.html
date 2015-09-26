@@ -48,13 +48,8 @@
                 $page.html(loginTmpl()); // Рендерим шаблон
                 // Инициализируем обработчики событий
                 $page.find('.js-back').on('click', showMainScreen);
-                $('#login').on('submit', function(e){
-                    e.preventDefault();
-                    $.ajax({
-                        url: "/api/v1/auth/signin",
-                    }).done(function(data){
-                        alert(data);
-                    });
+                $page.find('.js-submit').on('click', function() {
+                    $('#login_form').submit();
                 });
             }
             /* Деструктор экрана "Авторизация" */
