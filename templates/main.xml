@@ -1,2 +1,12 @@
-<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+<fest:template xmlns:fest="http://fest.mail.ru">
+	<div class="container">
+		<div class="container-header">
+			<h1 class="container-header__title title_logo">Quiz</h1>
+		</div>
+		<div class="container-menu">
+			<div class="container-menu__button js-start-game">Начать</div>
+			<div class="container-menu__button js-login">Войти</div>
+			<div class="container-menu__button js-scoreboard">Лучшие</div>
+		</div>
+	</div>
 </fest:template>
