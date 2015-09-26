@@ -21,8 +21,6 @@ body {
 }
 
 .container-menu {
-    padding: 15px;
-    padding-top: 0px;
 }
 
 .container-menu__button:first-child {
@@ -34,18 +32,18 @@ body {
 }
 
 .container-header__title {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 35px 25px 35px 25px;
     color: #444;
     font-family: "Roboto";
     font-weight: 200;
-    font-size: 80px;
+    font-size: 40px;
     text-transform: uppercase;
 }
 
 .title_logo {
-    font-family: "Lato";
+    font-family: "Roboto";
     font-size: 130px;
+    color: #777;
 }
 
 .container-menu__button {
