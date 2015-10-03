@@ -63,6 +63,8 @@ body {
     box-shadow: 0px 5px 0px 0px #15B358;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
+    display: block;
 }
 
 .container-menu__menu-button:active {
@@ -113,7 +115,6 @@ body {
 ::-webkit-input-placeholder {
    color: #777;
 }
-
 
 .container-form {
 

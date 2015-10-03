@@ -1,28 +1,15 @@
 define([
     'backbone',
-    'tmpl/main'
+    'tmpl/main',
+    'views/BaseView'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    BaseView
 ){
-
-    var View = Backbone.View.extend({
-
+    var View = BaseView.extend({
         template: tmpl,
-        initialize: function () {
-            // TODO
-        },
-        render: function () {
-            // TODO
-        },
-        show: function () {
-            // TODO
-        },
-        hide: function () {
-            // TODO
-        }
-
     });
 
-    return new View();
+    return View;
 });

@@ -1,28 +1,19 @@
 define([
     'backbone',
-    'tmpl/login'
+    'tmpl/login',
+    'views/BaseView'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    BaseView
 ){
-
-    var View = Backbone.View.extend({
-
+    var View = BaseView.extend({
         template: tmpl,
-        initialize: function () {
-            // TODO
-        },
-        render: function () {
-            // TODO
-        },
-        show: function () {
-            // TODO
-        },
-        hide: function () {
-            // TODO
+        events: {
+            'click .js-submit': function() {$('#login_form').submit();},
+            'keyup': function() {if(event.keyCode == 13){this.$("#login_form").submit();}},
         }
-
     });
 
-    return new View();
+    return View;
 });

@@ -4,7 +4,7 @@
 			<h1 class="container-header__title">Игра</h1>
 		</div>
 		<div class="container-menu">
-			<div class="container-menu__menu-button js-back">Назад</div>
+			<a href="#" class="container-menu__menu-button js-back">Назад</a>
 		</div>
 	</div>
 </fest:template>

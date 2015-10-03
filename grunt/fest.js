@@ -9,7 +9,8 @@ module.exports = function(grunt) {
             }],
             options: {
                 template: function(data) {
-                    return grunt.template.process('var <%= name %>Tmpl = <%= contents %> ;', {
+                    return grunt.template.process(
+                        'define(function() { return <%= contents %> ;});', {
                         data: data
                     });
                 }

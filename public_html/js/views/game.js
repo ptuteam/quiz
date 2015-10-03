@@ -1,28 +1,15 @@
 define([
     'backbone',
-    'tmpl/game'
+    'tmpl/game',
+    'views/BaseView'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    BaseView
 ){
-
-    var View = Backbone.View.extend({
-
-        template: tmpl,
-        initialize: function () {
-            // TODO
-        },
-        render: function () {
-            // TODO
-        },
-        show: function () {
-            // TODO
-        },
-        hide: function () {
-            // TODO
-        }
-
+    var View = BaseView.extend({
+        template: tmpl
     });
 
-    return new View();
+    return View;
 });
