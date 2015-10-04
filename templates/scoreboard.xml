@@ -1,10 +1,32 @@
-<fest:template xmlns:fest="http://fest.mail.ru">
-	<div class="container">
-		<div class="container-header">
-			<h1 class="container-header__title">Рекорды</h1>
-		</div>
-		<div class="container-menu">
-			<a href='#' class="container-menu__menu-button js-back">Назад</a>
-		</div>
-	</div>
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+<div class="container">
+    <div class="container-header">
+        <h1 class="container-header__title">Рекорды</h1>
+    </div>
+    <div class="container-content">
+    	<fest:if test="json.arg.models.length">
+	        <ul class="rating-items-list">
+	            <fest:for iterate="json.arg.models" index="i">
+	            <li class='rating-items-list__element'>
+	                <div class="rating-item">
+	                    <div class="rating-item__name">
+	                        <fest:value output="text">
+	                        (i+1)+'. '+json.arg.models[i].get('first_name');
+	                        </fest:value>
+	                    </div>
+	                    <div class="rating-item__score">
+	                        <fest:value output="text">
+	                        json.arg.models[i].get('score');
+	                        </fest:value>
+	                    </div>
+	                </div>
+	            </li>
+	            </fest:for>
+	        </ul>
+        </fest:if>
+    </div>
+    <div class="container-menu">
+        <a href='#' class="container-menu__menu-button js-back">Назад</a>
+    </div>
+</div>
 </fest:template>

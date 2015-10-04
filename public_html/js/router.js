@@ -23,13 +23,7 @@ define([
         showView: function (viewKey) {
             this.viewManager.presentView(viewKey);
         },
-        moveToMain: function() {
-            this.moveTo("#");
-        },
-        moveTo: function(url) {
-            this.navigate(url);
-        },
-        //Routes methods
+        //Route methods
         defaultAction: function () {
             this.showView(this.viewManager.MAIN_VIEW);
         },

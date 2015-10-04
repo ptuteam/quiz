@@ -38,7 +38,7 @@ define([
             var view = this.views[viewKey];
 
             if (this.currentView != null) {
-                this.currentView.dispose();
+                this.currentView.unload();
             }
 
             view.load();

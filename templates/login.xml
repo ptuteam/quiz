@@ -11,7 +11,7 @@
     </div>
     <div class="container-menu">
     	<div class="container-menu__menu-button js-submit">Войти</div>
-        <a href="#" class="container-menu__menu-button menu-button_clear js-back">Назад</a>
+        <a href="#" class="container-menu__menu-button js-back">Назад</a>
     </div>
 </div>
 </fest:template>

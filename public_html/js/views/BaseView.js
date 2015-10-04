@@ -6,27 +6,38 @@ define([
     var BaseView = Backbone.View.extend({
 
         loginRequire: false,
+        context: null,
         el: 'body',
 
-        dispose: function() {
+        //View lifecycle
+        unload: function() {
             this.hide();
         },
 
         load: function() {
-            this.render();
-            this.show();
+            this.present();
         },
 
+        //Overrides
         render: function () {
-            this.$el.html(this.template());
+            this.$el.html(this.template({
+                    'arg': this.context
+                }
+            ));
         },
 
+        //View appearance
         show: function () {
             $(this.el).show();
         },
 
         hide: function () {
             $(this.el).hide();
+        },
+
+        present: function() {
+            this.render();
+            this.show();
         }
     });
 
