@@ -1,17 +1,17 @@
 define([
-	'backbone'
+	'backbone',
+	'syncs/UserSync'
 ], function(
-	Backbone
+	Backbone,
+	UserSync
 ){
-
-    var User = Backbone.Model.extend({
+    var Model = Backbone.Model.extend({
+        sync: UserSync,
         defaults: {
-        	"user_id": "",
-            "first_name": "",
-            "last_name": "",
-            "avatar": ""
+            "email": "",
+            "password": ""
         }
     });
 
-    return User;
+    return new Model();
 });

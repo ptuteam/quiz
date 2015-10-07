@@ -7,7 +7,7 @@
     	<fest:if test="json.arg.models.length">
 	        <ul class="rating-items-list">
 	            <fest:for iterate="json.arg.models" index="i">
-	            <li class='rating-items-list__element'>
+	            <li class='rating-items-list-element'>
 	                <div class="rating-item">
 	                    <div class="rating-item__name">
 	                        <fest:value output="text">
