@@ -11,7 +11,7 @@
 	                <div class="rating-item">
 	                    <div class="rating-item__name">
 	                        <fest:value output="text">
-	                        (i+1)+'. '+json.arg.models[i].get('first_name');
+	                        (i+1)+'. '+json.arg.models[i].get('first_name') + ' ' + json.arg.models[i].get('last_name');
 	                        </fest:value>
 	                    </div>
 	                    <div class="rating-item__score">

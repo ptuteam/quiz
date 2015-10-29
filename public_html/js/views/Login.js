@@ -1,39 +1,34 @@
 define([
+    'app',
     'backbone',
     'tmpl/login',
     'views/BaseView',
-    'models/User',
-    'lib/jquery.validate',
+    'utils/AuthUtils'
 
 ], function(
+    app,
     Backbone,
     tmpl,
     BaseView,
-    User
+    utils
 ){
     var View = BaseView.extend({
         template: tmpl,
-        user: User,
         events: {
-            'click .js-submit': function(event) {this.submit(event);},
-            'keyup': function(event) {if(event.keyCode == 13){this.submit(event);}}
+            'click .js-submit': function(event) {this.openAuthPopup();},
+            'keyup': function(event) {if(event.keyCode == 13){this.openAuthPopup(event);}}
         },
 
         //Validation
         isValidForm: function() {
-            return $("#login_form").valid();
+            //return $("#login_form").valid();
         },
 
         //Submitting
-        submit: function(event) {
-            event.preventDefault();
-            if (this.isValidForm()) {
-                var pass = this.$("input[name=password]").val();
-                var email = this.$("input[name=email]").val();
-
-                this.user.set({"email": email, "password": pass});
-                this.user.save();
-            }
+        openAuthPopup: function() {
+            var popUpTitle = 'Авторизация';
+            var GUEST_OAUTH_URL = 'http://127.0.0.1:8081/api/v1/auth/guest'
+            utils.openPopup(GUEST_OAUTH_URL, popUpTitle);
         }
     });
 

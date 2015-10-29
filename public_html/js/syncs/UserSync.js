@@ -5,7 +5,6 @@ define([
 ) {
 
     return function(method, model, options) {
-
         var methods = {
             'create': {
                 send: function() {

@@ -4,10 +4,10 @@
         <h1 class="container-header__title">Вход</h1>
     </div>
     <div class="container-form">
-        <form class="form-login" method="POST" action="/api/v1/auth/signin" id="login_form">
+        <!--<form class="form-login" method="POST" action="/api/v1/auth/signin" id="login_form">
             <input class="form-login__input" name="email" type="email" placeholder="Логин" required="" id='input_email'/>
             <input class="form-login__input" name="password" type="password" placeholder="Пароль" required="" id='input_pass'/>
-        </form>
+        </form>-->
     </div>
     <div class="container-menu">
     	<div class="container-menu__menu-button js-submit">Войти</div>

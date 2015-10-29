@@ -22,7 +22,7 @@ define([
 
         load: function() {
             //Fetching score...
-            this.collection.fill();
+            this.collection.fetch();
         },
 
         onLoadComplete: function() {
