@@ -1,0 +1,3 @@
+[submodule "quiz-server"]
+	path = quiz-server
+	url = https://github.com/ptuteam/quiz-server.git
