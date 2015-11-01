@@ -1,45 +1,31 @@
-define([
-    'app'
-], function(
-    app
-){
+define(['app'], function(app) {
     var BaseView = Backbone.View.extend({
-
         loginRequire: false,
         context: null,
-        el: 'body',
-
         //View lifecycle
         unload: function() {
             this.hide();
         },
-
         load: function() {
             this.present();
         },
-
         //Overrides
-        render: function () {
+        render: function() {
             this.$el.html(this.template({
-                    'arg': this.context
-                }
-            ));
+                'arg': this.context
+            }));
         },
-
         //View appearance
-        show: function () {
+        show: function() {
             $(this.el).show();
         },
-
-        hide: function () {
+        hide: function() {
             $(this.el).hide();
         },
-
         present: function() {
             this.render();
             this.show();
         }
     });
-
     return BaseView;
 });

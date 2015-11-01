@@ -1,10 +1,4 @@
-define([
-	'backbone',
-	'syncs/UserSync'
-], function(
-	Backbone,
-	UserSync
-){
+define(['backbone', 'syncs/UserSync'], function(Backbone, UserSync) {
     var Model = Backbone.Model.extend({
         sync: UserSync,
         defaults: {
@@ -14,6 +8,5 @@ define([
             "email": "",
         }
     });
-
     return new Model();
 });

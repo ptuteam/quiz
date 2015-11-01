@@ -1,20 +1,10 @@
-define([
-    'models/Score',
-    'syncs/ScoreSync'
-
-], function(
-    Score,
-    ScoresSync
-){
-
+define(['models/Score', 'syncs/ScoreSync'], function(Score, ScoresSync) {
     var Collection = Backbone.Collection.extend({
-    	model: Score,
+        model: Score,
         sync: ScoresSync,
-
-    	comparator: function(score) {
-    		return -score.get('score');
-    	},
+        comparator: function(score) {
+            return -score.get('score');
+        },
     });
-
     return Collection;
 });

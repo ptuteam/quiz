@@ -1,10 +1,5 @@
 define(function() {
     return {
-        isTouchDevice: function() {
-            return 'ontouchstart' in window
-                || 'onmsgesturechange' in window;
-        },
-
         openPopup: function(url, title) {
             var w = 900;
             var h = 640;
