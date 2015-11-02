@@ -10,7 +10,10 @@ module.exports = {
     server: {
         files: ['public_html/js/**/*.js', 'public_html/css/**/*.css'],
         options: {
-            livereload: true
+            livereload: {
+                host: 'localhost',
+                port:9000,
+            }
         }
     }
 };
