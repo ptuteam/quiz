@@ -12,7 +12,7 @@ module.exports = {
         options: {
             livereload: {
                 host: 'localhost',
-                port:9000,
+                port:19234,
             }
         }
     }
