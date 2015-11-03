@@ -6,6 +6,7 @@ define(['backbone', 'syncs/UserSync'], function(Backbone, UserSync) {
             "last_name": "",
             "avatar": "",
             "email": "",
+            "score": 0
         }
     });
     return new Model();

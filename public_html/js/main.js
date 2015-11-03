@@ -20,7 +20,10 @@ define(['backbone', 'router', 'app', 'models/Session'], function(Backbone, route
     app.session = new Session();
 
     window.onSocialAuth = function() {
-        console.log('Handle authorization!')
+        console.log('Handle authorization!');
+        app.session.checkAuth(function(isAuthorized) {
+            
+        });
     }
     Backbone.history.start();
 });

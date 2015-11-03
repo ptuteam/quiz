@@ -12,7 +12,8 @@ define(['app'], function(app) {
         //Overrides
         render: function() {
             this.$el.html(this.template({
-                'arg': this.context
+                'arg': this.context,
+                'app': app
             }));
         },
         //View appearance

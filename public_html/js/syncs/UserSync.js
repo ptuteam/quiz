@@ -1,13 +1,18 @@
 define(['app'], function(app) {
     return function(method, model, options) {
         var methods = {
-            'create': {
+            'read': {
                 send: function() {
-                    $.ajax({
-                        type: "POST",
-                        url: '/api/v1/auth/signin',
-                        data: JSON.stringify(model.toJSON())
-                    });
+                    this.loadData();
+                },
+                loadData: function() {
+                    app.api.user.getUser().then(this.successLoadingHandler, this.errorLoadingHandler);
+                },
+                successLoadingHandler: function(data) {
+                    model.set(data);
+                },
+                errorLoadingHandler: function(message) {
+                    model.trigger('user_fetch:error', message);
                 }
             },
         };

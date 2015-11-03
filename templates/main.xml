@@ -1,12 +1,19 @@
-<fest:template xmlns:fest="http://fest.mail.ru">
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
 	<div class="container">
 		<div class="container-header">
 			<h1 class="container-header__title title_logo">Quiz</h1>
 		</div>
 		<div class="container-menu">
-			<a href='#game' class="container-menu__menu-button js-start-game">Начать</a>
-			<a href='#login' class="container-menu__menu-button js-login">Войти</a>
-			<a href='#scoreboard' class="container-menu__menu-button js-scoreboard">Рекорды</a>
+		<fest:if test="!json.app.session.get('loggedIn')">
+			<a href='#login' class="container-menu__menu-button">Войти</a>
+			<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
+        </fest:if>
+        <fest:if test="json.app.session.get('loggedIn')">
+            <a href='#game' class="container-menu__menu-button">Начать</a>
+			<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
+			<div class="container-menu__menu-button">Выйти</div>
+        </fest:if>
+
 		</div>
 	</div>
 </fest:template>
