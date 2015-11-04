@@ -14,7 +14,16 @@ body {
     background-color: white;
     border-radius: 3px;
     display: table;
+    box-sizing: border-box;
     min-width: 39%;
+}
+
+.container-user {
+    height: 70px;
+    background-color: rgba(71,156,77,1);
+    background-image: url("../img/square_bg.png");
+    border-radius: 3px 3px 0px 0px;
+    overflow: hidden;
 }
 
 .container-header {
@@ -30,6 +39,32 @@ body {
     font-weight: 400;
     font-size: 50px;
     text-transform: uppercase;
+}
+
+.container-user__user {
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 70px;
+    margin: 0px 0px 0px 20px;
+    color: #F0F8FF;
+}
+
+.container-avatar {
+    float: right;
+    height: 100%;
+    margin-right: 20px;
+    align-items: center;
+    display: flex;
+}
+
+.container-avatar__avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
 }
 
 .title_logo {

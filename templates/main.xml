@@ -1,19 +1,33 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-	<div class="container">
-		<div class="container-header">
-			<h1 class="container-header__title title_logo">Quiz</h1>
-		</div>
-		<div class="container-menu">
-		<fest:if test="!json.app.session.get('loggedIn')">
-			<a href='#login' class="container-menu__menu-button">Войти</a>
-			<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
-        </fest:if>
-        <fest:if test="json.app.session.get('loggedIn')">
-            <a href='#game' class="container-menu__menu-button">Начать</a>
-			<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
-			<div class="container-menu__menu-button">Выйти</div>
-        </fest:if>
+	<fest:if test="json.app.session.get('loggedIn')">
+	<div class="container-user">
+		<div class="container-user__user">
+			<fest:value output="text">
+            	json.app.session.user.get('first_name')      
+            </fest:value>
+            <fest:space/>
+            <fest:value output="text">
+            	json.app.session.user.get('last_name')      
+            </fest:value>
+        </div>
+        <div class="container-avatar">
+         	<img class="container-avatar__avatar" src="{json.app.session.user.get('avatar')}"></img>
+        </div>
+    </div>
+	</fest:if>
+	<div class="container-header">
+		<h1 class="container-header__title title_logo">Quiz</h1>
+	</div>
+	<div class="container-menu">
+	<fest:if test="!json.app.session.get('loggedIn')">
+		<a href='#login' class="container-menu__menu-button">Войти</a>
+		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
+    </fest:if>
+    <fest:if test="json.app.session.get('loggedIn')">
+        <a href='#game' class="container-menu__menu-button">Начать</a>
+		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
+		<div class="container-menu__menu-button js-logout">Выйти</div>
+    </fest:if>
 
-		</div>
 	</div>
 </fest:template>

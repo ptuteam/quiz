@@ -18,12 +18,17 @@ require.config({
 });
 define(['backbone', 'router', 'app', 'models/Session'], function(Backbone, router, app, Session) {
     app.session = new Session();
+    app.router = router;
 
     window.onSocialAuth = function() {
         console.log('Handle authorization!');
         app.session.checkAuth(function(isAuthorized) {
-            
+            if (isAuthorized) {
+                app.router.navigateToMain();
+            }
         });
-    }
-    Backbone.history.start();
+    };
+    app.session.checkAuth(function() {
+        Backbone.history.start();
+    });
 });

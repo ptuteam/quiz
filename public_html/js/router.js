@@ -1,4 +1,4 @@
-define(['app', 'views/ViewManager'], function(app, ViewManager) {
+define(['views/ViewManager'], function(ViewManager) {
     var Router = Backbone.Router.extend({
         routes: {
             'scoreboard': 'scoreboardAction',
@@ -9,12 +9,19 @@ define(['app', 'views/ViewManager'], function(app, ViewManager) {
         viewManager: null,
         initialize: function() {
             this.viewManager = new ViewManager({
-                el: 'body'
+                el: '.container'
             });
         },
         //Navigation methods
         showView: function(viewKey) {
             this.viewManager.presentView(viewKey);
+        },
+        navigateToMain: function() {
+            this.navigateTo("#");
+        },
+
+        navigateTo: function(url) {
+            this.navigate(url, {trigger: true});
         },
         //Route methods
         defaultAction: function() {

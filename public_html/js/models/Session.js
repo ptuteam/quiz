@@ -19,8 +19,22 @@ define(['backbone', 'app', 'models/User'], function(Backbone, app, UserModel) {
             }
         },
         checkAuth: function(callback) {
-            this.user.fetch();
-            this.set('loggedIn', true);
+            var self = this;
+            app.api.user.getUser().then(
+                function(userdata) {
+                    self.user.set(userdata);
+                    self.set('loggedIn', true);
+                    callback(true);
+                },
+                function() {
+                    callback(false);
+                }
+            );
+        },
+        logout: function() {
+            app.api.auth.logout();
+            this.user = UserModel;
+            this.set('loggedIn', false);
         }
     });
     return Model;
