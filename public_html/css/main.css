@@ -20,7 +20,7 @@ body {
 
 .container-user {
     height: 70px;
-    background-color: rgba(71,156,77,1);
+    background-color: rgba(71,156,77,0.8);
     background-image: url("../img/square_bg.png");
     border-radius: 3px 3px 0px 0px;
     overflow: hidden;
