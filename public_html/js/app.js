@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "utils/api/api_scores", "utils/api/api_auth", "utils/api/api_user"], function($, _, Backbone, ApiScores, ApiAuth, ApiUser) {
+define(["jquery", "underscore", "backbone", "views/components/Preloader", "utils/api/api_scores", "utils/api/api_auth", "utils/api/api_user"], function($, _, Backbone, Preloader, ApiScores, ApiAuth, ApiUser) {
     var app = {
         api: {
             scores: ApiScores,
@@ -7,6 +7,7 @@ define(["jquery", "underscore", "backbone", "utils/api/api_scores", "utils/api/a
         },
         session: null,
         router: null,
+        preloader: Preloader,
     };
     return app;
 });
