@@ -7,13 +7,10 @@ define(['app', 'backbone', 'tmpl/scoreboard', 'views/BaseView', 'models/Score', 
             this.listenTo(this.collection, 'scores_fetched', this.onLoadComplete);
         },
         load: function() {
-            //Fetching score...
-            app.preloader.show();
             this.collection.fetch();
         },
         onLoadComplete: function() {
             this.present();
-            app.preloader.hide();
         }
     });
     return View;

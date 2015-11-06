@@ -13,5 +13,12 @@
         </div>
         <div class="container"></div>
         <script data-main="js/main" src="js/lib/require.js"></script>
+        <script>
+            (function () {
+                window.onload = function () {
+                    document.getElementById('loader-wrapper').style.display = "none";
+                };
+            })();
+        </script>
     </body>
 </html>

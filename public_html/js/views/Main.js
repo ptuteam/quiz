@@ -1,4 +1,4 @@
-define(['app', 'tmpl/main', 'views/BaseView'], function(app, tmpl, BaseView) {
+define(['app', 'tmpl/main', 'views/BaseView', 'utils/api/ws/api_game'], function(app, tmpl, BaseView, api) {
     var View = BaseView.extend({
         template: tmpl,
         events: {
@@ -7,13 +7,6 @@ define(['app', 'tmpl/main', 'views/BaseView'], function(app, tmpl, BaseView) {
         logoutAction: function() {
             app.session.logout();
             this.present();
-        },
-        render: function() {
-            this.$el.html(this.template({
-                'arg': this.context,
-                'app': app
-            }));
-            app.preloader.hide();
         },
     });
     return View;

@@ -8,6 +8,11 @@ define(["jquery", "underscore", "backbone", "views/components/Preloader", "utils
         session: null,
         router: null,
         preloader: Preloader,
+
+        wsEvents: new _.extend({}, Backbone.Events),
     };
+
+    //app.wsEvents = new _.extend({}, Backbone.Events);
+
     return app;
 });

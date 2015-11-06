@@ -15,10 +15,29 @@
         </div>
     </div>
 	</fest:if>
+	<fest:if test="!json.arg">
 	<div class="container-header">
 		<h1 class="container-header__title">Игра</h1>
 	</div>
+	</fest:if>
+	<fest:if test="json.arg">
+	<div class="container-content">
+		<div class="content-question">
+			<fest:value output="text">json.arg.question</fest:value>
+		</div>
+		<div class="content-answers">
+			<fest:for iterate="json.arg.answers" index="i">
+				<div class="container-menu__menu-button js-send">
+					<fest:value output="text">json.arg.answers[i]</fest:value>
+				</div>
+			</fest:for>
+		</div>	
+	</div>
+	</fest:if>
+	<fest:if test="!json.arg">
 	<div class="container-menu">
+		<div class="container-menu__menu-button js-connect">Соединиться</div>
 		<a href="#" class="container-menu__menu-button js-back">Назад</a>
 	</div>
+	</fest:if>
 </fest:template>
