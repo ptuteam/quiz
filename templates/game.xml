@@ -1,21 +1,9 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
 	<fest:if test="json.app.session.get('loggedIn')">
-	<div class="container-user">
-		<div class="container-user__user">
-			<fest:value output="text">
-            	json.app.session.user.get('first_name')      
-            </fest:value>
-            <fest:space/>
-            <fest:value output="text">
-            	json.app.session.user.get('last_name')      
-            </fest:value>
-        </div>
-        <div class="container-avatar">
-         	<img class="container-avatar__avatar" src="{json.app.session.user.get('avatar')}"></img>
-        </div>
-    </div>
+		<fest:include context="json.app.session.user" src="user.xml"/>
 	</fest:if>
-	<fest:if test="!json.arg">
+
+	<!--<fest:if test="!json.arg">
 	<div class="container-header">
 		<h1 class="container-header__title">Игра</h1>
 	</div>
@@ -39,5 +27,34 @@
 		<div class="container-menu__menu-button js-connect">Соединиться</div>
 		<a href="#" class="container-menu__menu-button js-back">Назад</a>
 	</div>
-	</fest:if>
+	</fest:if>-->
+	<div class="container-game">
+		<div class="game-player">
+			<div class="player-score">
+				<div class="player-score__points">15</div>
+			</div>
+			<div class="player-block">
+       			<div class="player-block-avatar">
+       				<img class="player-block-avatar__image" src="{json.app.session.user.get('avatar')}"/>
+       			</div>
+       			<div class="player-block__username">
+					<fest:value output="text">
+	        			json.app.session.user.get('first_name')      
+	        		</fest:value>
+	       		</div>
+			</div>
+		</div>
+		<div class="game-enemy">
+			<div class="enemy-score">
+				<div class="enemy-score__points">10</div>
+			</div>
+			<div class="enemy-block">
+				<div class="enemy-block-avatar">
+					<img class="enemy-block-avatar__image" src="http://api.adorable.io/avatar/as"/>
+				</div>
+				<div class="enemy-block__username">POLINA</div>
+			</div>
+		</div>
+		<div class="versus-block">VS</div>
+	</div>
 </fest:template>

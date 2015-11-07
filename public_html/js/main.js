@@ -5,6 +5,7 @@ require.config({
         jquery: "lib/jquery",
         underscore: "lib/underscore",
         backbone: "lib/backbone",
+        'jquery-ui': "lib/jquery-ui/jquery-ui.min",
     },
     shim: {
         'backbone': {
@@ -13,6 +14,10 @@ require.config({
         },
         'underscore': {
             exports: '_'
+        },
+        'jquery-ui': {
+            deps: ['jquery'],
+            exports: '$',
         }
     }
 });

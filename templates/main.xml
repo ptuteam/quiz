@@ -1,19 +1,6 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
 	<fest:if test="json.app.session.get('loggedIn')">
-	<div class="container-user">
-		<div class="container-user__user">
-			<fest:value output="text">
-            	json.app.session.user.get('first_name')      
-            </fest:value>
-            <fest:space/>
-            <fest:value output="text">
-            	json.app.session.user.get('last_name')      
-            </fest:value>
-        </div>
-        <div class="container-avatar">
-         	<img class="container-avatar__avatar" src="{json.app.session.user.get('avatar')}"></img>
-        </div>
-    </div>
+		<fest:include context="json.app.session.user" src="user.xml"/>
 	</fest:if>
 	<div class="container-header">
 		<h1 class="container-header__title title_logo">Quiz</h1>
