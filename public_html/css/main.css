@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto Condensed+Condensed:400,300);
-@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono&subset=latin,cyrillic-ext);
 @import url("preloader.css");
 @import url("game.css");
-
 body {
     background-image: url("../img/back.png");
     font-family: "Roboto Condensed", sans-serif;
@@ -19,7 +18,13 @@ body {
     border-radius: 3px;
     display: table;
     box-sizing: border-box;
-    min-width: 39%;
+    min-width: 500px;
+    width: 40%;
+}
+
+.container-wide {
+    min-width: 960px;
+    width: 80%;
 }
 
 .container-user {

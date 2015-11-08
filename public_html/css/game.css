@@ -1,7 +1,4 @@
-.container-wide {
-    width: 80%;
-    min-width: 960px;
-}
+/*The main game container*/
 
 .container-game {
     text-align: center;
@@ -9,20 +6,22 @@
 
 .game-player {
     width: 50%;
-    height: 600px;
-    background-color: white;
     display: inline-block;
     background-color: #E0FFE8;
     vertical-align: bottom;
+    background-image: url("../img/square_bg.png");
 }
 
 .game-enemy {
     width: 50%;
-    height: 600px;
     background-color: #fff9ef;
     display: inline-block;
     vertical-align: bottom;
+    background-image: url("../img/square_bg.png");
 }
+
+
+/*Right part of game container*/
 
 .player-block {
     margin: auto;
@@ -32,21 +31,38 @@
 
 .player-block__username {
     text-transform: uppercase;
-    font-family: "Bitter" serif;
+    font-family: "Fira Mono" serif;
     color: #4F7050;
     font-size: 34px;
     font-weight: 400;
-    margin-top: 30px;
+    margin: 35px 0px;
 }
 
-.player-block-avatar {}
+.player-block-avatar {
+    box-sizing: border-box;
+}
 
 .player-block-avatar__image {
-    width: 210px;
-    height: 210px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 4px solid #4F7050;
 }
+
+.player-score {
+    color: #4F7067;
+    height: 15%;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.player-score__points {
+    font-family: "Fira Mono" serif;
+    font-size: 60px;
+}
+
+
+/*Left part of game container*/
 
 .enemy-block {
     margin: auto;
@@ -56,18 +72,18 @@
 
 .enemy-block__username {
     text-transform: uppercase;
-    font-family: "Bitter" serif;
+    font-family: "Fira Mono";
     color: #8C694B;
     font-size: 34px;
     font-weight: 400;
-    margin-top: 30px;
+    margin: 35px 0px;
 }
 
 .enemy-block-avatar {}
 
 .enemy-block-avatar__image {
-    width: 210px;
-    height: 210px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 4px solid #8C694B;
 }
@@ -75,45 +91,28 @@
 .enemy-score {
     color: #8C694B;
     height: 15%;
-    margin-top: 65px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 25px;
 }
 
 .enemy-score__points {
-    font-family: "Bitter" serif;
-    font-size: 90px;
-}
-
-.player-score {
-    color: #4F7067;
-    height: 15%;
-    margin-top: 65px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.player-score__points {
-    font-family: "Bitter" serif;
-    font-size: 90px;
+    font-family: "Fira Mono" serif;
+    font-size: 60px;
 }
 
 .versus-block {
     position: relative;
-    bottom: 370px;
-    font-family: "Bitter" serif;
-    padding: 15px;
+    box-sizing: border-box;
+    bottom: 230px;
+    font-family: "Fira Mono" serif;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    padding-top: 3px;
     margin: auto;
-    margin-bottom: -110px;
-    background-color: #F2614D;
+    margin-bottom: -60px;
+    background-color: #F2837A;
 }
