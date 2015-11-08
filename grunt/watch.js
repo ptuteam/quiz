@@ -1,6 +1,6 @@
 module.exports = {
     fest: {
-        files: ['templates/*.xml'],
+        files: ['templates/**/*.xml'],
         tasks: ['fest'],
         options: {
             interrupt: true,

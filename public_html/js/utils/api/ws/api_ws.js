@@ -15,6 +15,10 @@ define(["app", "config", "utils/api/ws/api_game"], function(app, config, api_gam
         	webSocket.onerror = this.onError;
         },
 
+        closeConnection: function() {
+            this.socket.close();
+        },
+
         onOpen: function() {
         	console.log("Socket is opened");
         },

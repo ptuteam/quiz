@@ -222,3 +222,89 @@ body {
     font-size: 30px;
     text-align: center;
 }
+
+#modalContainer {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 400px;
+}
+
+.modal {
+    background-color: white;
+    padding: 30px;
+    background-image: url("../img/square_bg.png");
+}
+
+.modal__title {
+    color: #555;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 50px 120px 50px;
+}
+
+.modal__loader {
+    box-sizing: border-box;
+}
+
+.modal__menu-button {
+    box-sizing: border-box;
+    background-image: url("../img/square_bg.png");
+    margin: auto;
+    margin-top: 50px;
+    width: 55%;
+    border-radius: 5px;
+    padding: 13px 13px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+    text-align: center;
+    display: block;
+}
+
+.modal__menu-button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.modal__menu-button:hover {
+    background-color: #3AC876;
+}
+
+.content-answers__answer {
+    box-sizing: border-box;
+    font-family: "Fira Mono";
+    margin: 10px auto;
+    width: 70%;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+    text-align: center;
+    display: block;
+}
+
+.content-answers__answer:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.content-answers__answer:hover {
+    background-color: #3AC876;
+}
+
+.answer-correct {
+    background-color: #3AC876;
+}
+
+.answer-incorrect {
+    background-color: #C84929;
+}

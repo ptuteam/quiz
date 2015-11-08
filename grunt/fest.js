@@ -4,7 +4,7 @@ module.exports = function(grunt) {
             files: [{
                 expand: true,
                 cwd: 'templates',
-                src: '*.xml',
+                src: ['**/*.xml', "*.xml"],
                 dest: 'public_html/js/tmpl'
             }],
             options: {

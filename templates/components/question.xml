@@ -1,0 +1,14 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+<div class="container-content">
+	<div class="content-question">
+		<fest:value output="text">json.question</fest:value>
+	</div>
+	<div class="content-answers">
+		<fest:for iterate="json.answers" index="i">
+			<div class="content-answers__answer js-send">
+				<fest:value output="text">json.answers[i]</fest:value>
+			</div>
+		</fest:for>
+	</div>	
+</div>
+</fest:template>

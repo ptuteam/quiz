@@ -11,7 +11,7 @@
 		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
     </fest:if>
     <fest:if test="json.app.session.get('loggedIn')">
-        <a href='#game' class="container-menu__menu-button">Начать</a>
+        <div class="container-menu__menu-button js-start">Начать</div>
 		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
 		<div class="container-menu__menu-button js-logout">Выйти</div>
     </fest:if>
