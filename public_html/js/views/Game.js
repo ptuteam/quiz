@@ -3,10 +3,23 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/comp
         template: tmpl,
         initialize: function() {
             this.listenTo(app.wsEvents, "wsGameFinished", this.onGameFinish);
+            this.listenTo(app.wsEvents, "wsGameStart", this.onGameStart);
             this.listenTo(app.wsEvents, "wsRoundStart", this.onNewRound);
             this.listenTo(app.wsEvents, "wsRoundEnd", this.onFinishRound);
             this.listenTo(app.wsEvents, "wsNewQuestion", this.onNewQuestion);
+
+            this.opponent = null;
+
             this.questionModal = new QuestionModal();
+        },
+        onGameStart: function(data) {
+            var opponent = data.players.find(function(element) {
+                    return app.session.user.get('email') != element.email;
+            });
+            this.context = {"opponent": opponent};
+            console.log(this.context);
+            console.log(this.context.opponent.email);
+
         },
         onGameFinish: function(data) {
             console.log('Game finished');
