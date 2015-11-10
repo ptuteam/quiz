@@ -14,7 +14,7 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/comp
         },
         onGameStart: function(data) {
             var opponent = data.players.find(function(element) {
-                    return app.session.user.get('email') != element.email;
+                return app.session.user.get('email') != element.email;
             });
             this.context = {"opponent": opponent};
             console.log(this.context);
