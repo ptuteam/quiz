@@ -19,9 +19,10 @@ define(['views/ViewManager'], function(ViewManager) {
         navigateToMain: function() {
             this.navigateTo("#");
         },
-
         navigateTo: function(url) {
-            this.navigate(url, {trigger: true});
+            this.navigate(url, {
+                trigger: true
+            });
         },
         //Route methods
         defaultAction: function() {
@@ -33,7 +34,6 @@ define(['views/ViewManager'], function(ViewManager) {
         gameAction: function() {
             this.showView(this.viewManager.GAME_VIEW);
             $('.container').addClass('container-wide', 3000);
-
         },
         loginAction: function() {
             this.showView(this.viewManager.LOGIN_VIEW);
