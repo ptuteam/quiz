@@ -1,4 +1,4 @@
-define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/components/Question', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionModal) {
+define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/components/Question', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionView) {
     var View = BaseView.extend({
         template: tmpl,
         initialize: function() {
@@ -9,19 +9,17 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/comp
             this.listenTo(app.wsEvents, "wsNewQuestion", this.onNewQuestion);
 
             this.opponent = null;
-
-            this.questionModal = new QuestionModal();
         },
         onGameStart: function(data) {
             var opponent = data.players.find(function(element) {
                 return app.session.user.get('email') != element.email;
             });
             this.context = {"opponent": opponent};
-            console.log(this.context);
             console.log(this.context.opponent.email);
 
         },
         onGameFinish: function(data) {
+            this.questionView.destroy();
             console.log('Game finished');
             console.log(data);
         },
@@ -29,10 +27,11 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/comp
             console.log("OnNewRound");
         },
         onFinishRound: function(data) {
-            this.questionModal.hideModal();
+            this.questionView.hideModal();
         },
         onNewQuestion: function(data) {
-            this.questionModal.present(data);
+            this.questionView = new QuestionView(data);
+            this.questionView.present();
         },
         //Animation
         load: function() {

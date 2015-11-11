@@ -1,28 +1,25 @@
-define(['app', 'backbone.modal', 'tmpl/components/question', 'utils/api/ws/api_ws'], function(app, modal, tmpl, api) {
+define(['app', 'tmpl/components/question', 'models/Question','backbone.modal'], function(app, tmpl, Question) {
     var view = Backbone.ModalView.extend({
-        question: null,
-        isAnswered: false,
         events: {
-            'click .js-send': 'sendAnswer',
+            'click .js-send': 'onSendAnswer',
         },
         initialize: function(data) {
-            this.question = data;
+            this.question = new Question(data);
         },
         render: function() {
             this.$el.html(tmpl(this.question));
-            return this;
         },
-        present: function(data) {
-            this.question = data;
-            this.isAnswered = false;
-            this.render().showModal();
+        present: function() {
+            this.render();
+            this.showModal();
         },
-        sendAnswer: function(event) {
-            if (!this.isAnswered) {
-                api.sendAnswer(event.target.innerText);
-                this.isAnswered = true;
-                console.log('Answer sent');
-            }
+        onSendAnswer: function(event) {
+            this.question.sendAnswer(event.target.innerText);
+        },
+        destroy: function() {
+            this.hideModal();
+            this.$el.remove();
+            this.undelegateEvents();
         }
     });
     return view;
