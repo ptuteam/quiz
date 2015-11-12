@@ -275,36 +275,3 @@ body {
 .modal__menu-button:hover {
     background-color: #3AC876;
 }
-
-.content-answers__answer {
-    box-sizing: border-box;
-    font-family: "Fira Mono";
-    margin: 10px auto;
-    width: 70%;
-    border-radius: 5px;
-    padding: 8px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #2ecc71;
-    box-shadow: 0px 5px 0px 0px #15B358;
-    text-align: center;
-    display: block;
-}
-
-.content-answers__answer:active {
-    transform: translate(0px, 5px);
-    -webkit-transform: translate(0px, 5px);
-    box-shadow: 0px 1px 0px 0px;
-}
-
-.content-answers__answer:hover {
-    background-color: #3AC876;
-}
-
-.answer-correct {
-    background-color: #3AC876;
-}
-
-.answer-incorrect {
-    background-color: #C84929;
-}

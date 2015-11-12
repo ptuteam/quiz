@@ -280,7 +280,7 @@ Backbone.ModalView =
 
                 modalContainer.css({
                         "opacity": 0,
-                        "position": "fixed",
+                        "position": "absolute",
                         "z-index": 999999});
 
 				var offsets = this.getOffsets();
