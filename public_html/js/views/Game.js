@@ -1,6 +1,8 @@
 define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/components/Question', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionView) {
     var View = BaseView.extend({
         template: tmpl,
+        gameRequire: true,
+        loginRequire: true,
         initialize: function() {
             this.listenTo(app.wsEvents, "wsGameFinished", this.onGameFinish);
             this.listenTo(app.wsEvents, "wsGameStart", this.onGameStart);

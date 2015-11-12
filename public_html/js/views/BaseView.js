@@ -1,6 +1,7 @@
 define(['app'], function(app) {
     var BaseView = Backbone.View.extend({
         loginRequire: false,
+        gameRequire: false,
         context: null,
         //View lifecycle
         unload: function() {

@@ -4,9 +4,13 @@ define(['backbone', 'app', 'models/User'], function(Backbone, app, UserModel) {
         GUEST_AUTH: 1,
         defaults: {
             loggedIn: false,
+            isInGame: false,
         },
         initialize: function() {
             this.user = UserModel;
+
+            this.listenTo(app.wsEvents, "wsGameFinished", this.onGameFinish);
+            this.listenTo(app.wsEvents, "wsGameStart", this.onGameStart);
         },
         authorize: function(provider) {
             switch (provider) {
@@ -35,7 +39,13 @@ define(['backbone', 'app', 'models/User'], function(Backbone, app, UserModel) {
             app.api.auth.logout();
             this.user = UserModel;
             this.set('loggedIn', false);
-        }
+        },
+        onGameStart: function() {
+            this.set('isInGame', true);
+        },
+        onGameFinish: function() {
+            this.set('isInGame', false)
+        },
     });
     return Model;
 });

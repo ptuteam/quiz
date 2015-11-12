@@ -30,12 +30,25 @@ define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/Game'], f
         //Presenting
         presentView: function(viewKey) {
             var view = this.views[viewKey];
-            if (this.currentView != null) {
-                this.currentView.unload();
+            //If login required or game required
+            if((view.loginRequire == true && app.session.get('loggedIn') == false) || 
+                (view.gameRequire == true && app.session.get('isInGame') == false)) {
+                this.goToMain();
+            } else {
+                if (this.currentView != null) {
+                    this.currentView.unload();
+                }
+                view.load();
+                this.currentView = view;
             }
-            view.load();
-            this.currentView = view;
-        }
+        },
+        goToMain: function() {
+            if(this.currentView == this.views[this.MAIN_VIEW]) {
+                this.currentView.load();
+            } else {
+                app.router.navigateToMain();
+            }
+        },
     });
     return ViewManager;
 });
