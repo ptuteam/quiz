@@ -23,8 +23,8 @@ body {
 }
 
 .container-wide {
-    min-width: 960px;
-    width: 80%;
+    min-width: 800px;
+    width: 70%;
 }
 
 .container-user {

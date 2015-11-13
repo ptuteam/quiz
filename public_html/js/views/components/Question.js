@@ -1,4 +1,4 @@
-define(['app', 'tmpl/components/question', 'models/Question','backbone.modal'], function(app, tmpl, Question) {
+define(['app', 'tmpl/components/question', 'models/game/Question','backbone.modal'], function(app, tmpl, Question) {
     var view = Backbone.ModalView.extend({
         events: {
             'click .js-send': 'onSendAnswer',

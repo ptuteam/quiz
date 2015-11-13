@@ -34,7 +34,6 @@ define(["app"], function(app) {
                         break;
                     }
                     case NEW_QUESTION: {
-                        console.log(data);
                         app.wsEvents.trigger("wsNewQuestion", data);
                         break;
                     }
