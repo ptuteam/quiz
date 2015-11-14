@@ -15,14 +15,16 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/comp
             this.context = this.game;
         },
         onGameFinish: function(data) {
-            this.questionView.destroy();
+            if (this.questionView) {
+                this.questionView.destroy();
+            }
             api.closeConnection();
         },
-        onNewRound: function(data) {
-        },
+        onNewRound: function(data) {},
         onFinishRound: function(data) {
             this.questionView.hideModal();
             this.game.update(data);
+            this.render();
         },
         onNewQuestion: function(data) {
             this.questionView = new QuestionView(data);

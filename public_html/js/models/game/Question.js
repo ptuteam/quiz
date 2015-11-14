@@ -1,5 +1,7 @@
 define(['backbone', 'utils/api/ws/api_ws'], function(Backbone, Api) {
     var Model = Backbone.Model.extend({
+        answeredIndex: -1,
+        answeredCorrectly: null,
         defaults: {
         	title: "",
         	isSent: false,
@@ -8,12 +10,17 @@ define(['backbone', 'utils/api/ws/api_ws'], function(Backbone, Api) {
         	this.title = data.question;
         	this.answers = data.answers;
         },
-        sendAnswer: function(answer) {
-        	if (!this.isSent) {
-        		console.log('Answer sent');
-        		Api.sendAnswer(answer);
-        		this.isSent = true;
+        sendAnswer: function(index, callback) {
+        	if (!this.isSent()) {
+                this.answeredIndex = index;
+        		Api.sendAnswer(this.answers[index]);
+                if (callback) {
+                    callback();
+                }
         	}
+        },
+        isSent: function() {
+            return this.answeredIndex != -1;
         }
 
     });

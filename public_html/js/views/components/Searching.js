@@ -1,5 +1,6 @@
 define(['app', 'backbone.modal', 'tmpl/components/loading', 'utils/api/ws/api_ws'], function(app, modal, tmpl, api) {
     var view = Backbone.ModalView.extend({
+        containerID: 'searchingModalContainer',
         events: {
             'click .js-back': 'onBackButton'
         },

@@ -9,6 +9,7 @@ define(["app"], function(app) {
         var TOO_MANY_ROOMS = '7';
         var NEW_PLAYER_CONNECT = '8';
         var ROUND_START = '9';
+        var IS_CORRECT_ANSWER = '10';
         var ROOM_PLAYERS = '11';
 
 
@@ -52,6 +53,9 @@ define(["app"], function(app) {
                     case ROUND_START: {
                         app.wsEvents.trigger("wsRoundStart", data);
                         break;
+                    }
+                    case IS_CORRECT_ANSWER: {
+                        app.wsEvents.trigger('wsIsCorrectAnswer', data);
                     }
                     case ROOM_PLAYERS: {
                         app.wsEvents.trigger("wsRoomPlayers", data);
