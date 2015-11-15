@@ -1,4 +1,4 @@
-define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/game/Question', 'models/game/Quiz', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionView, Game) {
+define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/components/Question', 'models/game/Quiz', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionView, Game) {
     var View = BaseView.extend({
         template: tmpl,
         gameRequire: true,
