@@ -1,16 +1,16 @@
 define(["app"], function(app) {
     return (function() {
-        var GAME_START = '1';
-        var ROUND_END = '2';
-        var GAME_FINISHED ='3';
-        var PLAYER_DISCONNECTED = '4';
-        var NEW_QUESTION = '5';
-        var ANSWER = '6';
-        var TOO_MANY_ROOMS = '7';
-        var NEW_PLAYER_CONNECT = '8';
-        var ROUND_START = '9';
-        var IS_CORRECT_ANSWER = '10';
-        var ROOM_PLAYERS = '11';
+        var GAME_START = 1;
+        var ROUND_END = 2;
+        var GAME_FINISHED =3;
+        var PLAYER_DISCONNECTED = 4;
+        var NEW_QUESTION = 5;
+        var ANSWER = 6;
+        var TOO_MANY_ROOMS = 7;
+        var NEW_PLAYER_CONNECT = 8;
+        var ROUND_START = 9;
+        var IS_CORRECT_ANSWER = 10;
+        var ROOM_PLAYERS = 11;
 
 
         return {

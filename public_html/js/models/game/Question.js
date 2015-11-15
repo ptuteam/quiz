@@ -7,8 +7,8 @@ define(['backbone', 'utils/api/ws/api_ws'], function(Backbone, Api) {
         	isSent: false,
         },
         initialize: function(data) {
-        	this.title = data.question;
-        	this.answers = data.answers;
+        	this.title = data.question.title;
+        	this.answers = data.question.answers;
         },
         sendAnswer: function(index, callback) {
         	if (!this.isSent()) {
