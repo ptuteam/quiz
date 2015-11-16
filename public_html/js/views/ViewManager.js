@@ -1,4 +1,4 @@
-define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/Game'], function(app, Main, Scoreboard, Login, Game) {
+define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/game/Game'], function(app, Main, Scoreboard, Login, Game) {
     var ViewManager = Backbone.View.extend({
         currentView: null,
 

@@ -52,6 +52,7 @@ Icon
 
 quiz-server.jar
 socials.properties
+database.properties
 
 # Directories potentially created on remote AFP share
 .AppleDB
