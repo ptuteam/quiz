@@ -159,8 +159,9 @@
 #searchingModalContainer {
     left: 50%;
     transform: translateX(-50%);
-    top: 15%;
+    top: 0%;
     margin-left: auto;
+    margin-top: 150px;
     margin-right: auto;
     min-width: 400px;
 }
@@ -168,7 +169,8 @@
 #questionModalContainer {
     left: 50%;
     transform: translateX(-50%);
-    top: 9%;
+    top: 0%;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     min-width: 400px;
@@ -177,7 +179,8 @@
 #finishModalContainer {
     left: 50%;
     transform: translateX(-50%);
-    top: 5%;
+    top: 0%;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     min-width: 35%;
