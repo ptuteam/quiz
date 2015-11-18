@@ -1,6 +1,5 @@
-define(['app', 'tmpl/components/question', 'models/game/Question', 'backbone.modal', 'jquery-ui'], function(app, tmpl, Question) {
-    var view = Backbone.ModalView.extend({
-        containerID: 'questionModalContainer',
+define(['app', 'tmpl/game/question', 'models/game/Question', 'popup', 'jquery-ui'], function(app, tmpl, Question) {
+    var view = Backbone.Popup.extend({
         events: {
             'click .js-send': 'onAnswer',
         },
@@ -13,10 +12,10 @@ define(['app', 'tmpl/components/question', 'models/game/Question', 'backbone.mod
         },
         present: function() {
             this.render();
-            this.showModal();
+            this.showPopup();
         },
         destroy: function() {
-            this.hideModal();
+            this.hidePopup();
         },
         onAnswer: function(event) {
             this.question.sendAnswer($(event.target).index(), function() {

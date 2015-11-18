@@ -1,6 +1,5 @@
-define(['app', 'tmpl/game/finish', 'backbone.modal', 'jquery-ui'], function(app, tmpl, Question) {
-    var view = Backbone.ModalView.extend({
-        containerID: 'finishModalContainer',
+define(['app', 'tmpl/game/finish', 'popup', 'jquery-ui'], function(app, tmpl, Question) {
+    var view = Backbone.Popup.extend({
         events: {
             'click .js-return': 'onReturn',
         },
@@ -12,10 +11,10 @@ define(['app', 'tmpl/game/finish', 'backbone.modal', 'jquery-ui'], function(app,
         },
         present: function() {
             this.render();
-            this.showModal();
+            this.showPopup();
         },
         destroy: function() {
-            this.hideModal();
+            this.hidePopup();
         },
         onReturn: function(event) {
             this.destroy();

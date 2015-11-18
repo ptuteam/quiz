@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-<div class="container-content">
+<div class="container-modal">
 	<div class="content-question">
 		<fest:value output="text">json.title</fest:value>
 	</div>

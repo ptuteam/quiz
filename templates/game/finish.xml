@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-<div class="container-content">
+<div class="container-modal">
 	<div class="finish-title">Победитель</div>
 	<div class="finish-winner">
 		<div class="finish-winner__name">

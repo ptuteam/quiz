@@ -11,7 +11,7 @@ define(['app', 'tmpl/main', 'views/BaseView', 'utils/api/ws/api_ws', 'views/comp
         },
         searchGame: function() {
             var view = new Loading();
-            view.render().showModal();
+            view.render().showPopup();
         },
     });
     return View;

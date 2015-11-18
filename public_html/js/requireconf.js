@@ -6,7 +6,7 @@ require.config({
         underscore: "lib/underscore",
         backbone: "lib/backbone",
         'jquery-ui': "lib/jquery-ui/jquery-ui.min",
-        'backbone.modal': "lib/Backbone.ModalDialog"
+        'popup': "lib/popup"
     },
     shim: {
         'backbone': {
@@ -20,7 +20,7 @@ require.config({
             deps: ['jquery'],
             exports: '$',
         },
-        'backbone.modal': {
+        'popup': {
             deps: ['backbone'],
             exports: 'Backbone'
         }
