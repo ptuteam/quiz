@@ -4,7 +4,7 @@
 @import url("popup.css");
 body {
     background-image: url("../img/back.png");
-    font-family: "Fira Mono" sans-serif;
+    font-family: "Fira Mono", sans-serif;
     margin: 0px;
     padding: 0px;
 }
