@@ -1,11 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto Condensed+Condensed:400,300);
 @import url(https://fonts.googleapis.com/css?family=Fira+Mono&subset=latin,cyrillic-ext);
 @import url("preloader.css");
 @import url("game.css");
 @import url("popup.css");
 body {
     background-image: url("../img/back.png");
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Fira Mono" sans-serif;
     margin: 0px;
     padding: 0px;
 }
@@ -20,7 +19,7 @@ body {
     display: table;
     box-sizing: border-box;
     min-width: 500px;
-    width: 50%;
+    width: 45%;
 }
 
 .container-wide {
@@ -53,11 +52,12 @@ body {
 .container-user__user {
     display: inline-block;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
     line-height: 70px;
     margin: 0px 0px 0px 20px;
     color: #F0F8FF;
+    text-shadow: 1px 2px #20922E;
 }
 
 .container-avatar {
@@ -100,7 +100,7 @@ body {
     width: 55%;
     border-radius: 5px;
     padding: 13px 13px;
-    font-size: 18px;
+    font-size: 20px;
     color: #fff;
     background-color: #2ecc71;
     box-shadow: 0px 5px 0px 0px #15B358;
