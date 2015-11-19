@@ -1,9 +1,9 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
 	<fest:if test="json.app.session.get('loggedIn')">
-		<fest:include context="json.app.session.user" src="user.xml"/>
+		<fest:include context="json.app.session.user" src="components/user.xml"/>
 	</fest:if>
 	<div class="container-header">
-		<h1 class="container-header__title title_logo">Quiz</h1>
+		<h1 class="container-header__title title_logo">KVIZ</h1>
 	</div>
 	<div class="container-menu">
 	<fest:if test="!json.app.session.get('loggedIn')">
@@ -11,7 +11,7 @@
 		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
     </fest:if>
     <fest:if test="json.app.session.get('loggedIn')">
-        <div class="container-menu__menu-button js-start">Начать</div>
+        <a href='#start' class="container-menu__menu-button">Начать</a>
 		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
 		<div class="container-menu__menu-button js-logout">Выйти</div>
     </fest:if>

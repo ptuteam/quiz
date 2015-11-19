@@ -4,6 +4,7 @@ define(['views/ViewManager'], function(ViewManager) {
             'scoreboard': 'scoreboardAction',
             'game': 'gameAction',
             'login': 'loginAction',
+            'start': 'startAction',
             '*default': 'defaultAction'
         },
         viewManager: null,
@@ -36,7 +37,10 @@ define(['views/ViewManager'], function(ViewManager) {
         },
         loginAction: function() {
             this.showView(this.viewManager.LOGIN_VIEW);
-        }
+        },
+        startAction: function() {
+            this.showView(this.viewManager.START_GAME_VIEW);
+        },
     });
     return new Router();
 });

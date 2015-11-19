@@ -1,17 +1,12 @@
-define(['app', 'tmpl/main', 'views/BaseView', 'utils/api/ws/api_ws', 'views/components/Searching'], function(app, tmpl, BaseView, api, Loading) {
+define(['app', 'tmpl/main', 'views/BaseView'], function(app, tmpl, BaseView) {
     var View = BaseView.extend({
         template: tmpl,
         events: {
             'click .js-logout': 'logoutAction',
-            'click .js-start': 'searchGame'
         },
         logoutAction: function() {
             app.session.logout();
             this.present();
-        },
-        searchGame: function() {
-            var view = new Loading();
-            view.render().showPopup();
         },
     });
     return View;

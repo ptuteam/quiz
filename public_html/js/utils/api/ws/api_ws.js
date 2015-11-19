@@ -4,7 +4,6 @@ define(["app", "config", "utils/api/ws/api_game"], function(app, config, api_gam
         currentApi: null,
 
         startConnection: function() {
-            console.log("Новый сокет создался");
         	var webSocket = new WebSocket(this.WS_URL);
 
         	this.socket = webSocket;

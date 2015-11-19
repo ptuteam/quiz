@@ -1,4 +1,4 @@
-define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/game/Question', 'views/game/Finish', 'models/game/Game', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionView, FinishView, Game) {
+define(['app', 'tmpl/game/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/game/Question', 'views/game/Finish', 'models/game/Game', 'jquery-ui'], function(app, tmpl, BaseView, api, QuestionView, FinishView, Game) {
     var View = BaseView.extend({
         template: tmpl,
         gameRequire: true,
@@ -16,19 +16,19 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/game
             this.context = this.game;
         },
         onGameFinish: function(data) {
-            this.disposeModalIfNeeded();
+            this.disposePopupIfNeeded();
             api.closeConnection();
 
             //Obsosnyi kostyl
             var winner = (this.game.player.email === data.winner ? this.game.player : this.game.opponent); 
-            var finishView = new FinishView(winner);
-            finishView.present();
+            this.finishView = new FinishView(winner);
+            this.finishView.present();
         },
         onNewRound: function(data) {
 
         },
         onFinishRound: function(data) {
-            this.disposeModalIfNeeded();
+            this.disposePopupIfNeeded();
             this.game.update(data);
             this.render();
         },
@@ -43,13 +43,16 @@ define(['app', 'tmpl/game', 'views/BaseView', 'utils/api/ws/api_ws', 'views/game
         },
         unload: function() {
             this.hide();
-            this.disposeModalIfNeeded();
+            this.disposePopupIfNeeded();
             api.closeConnection();
             $('.container').removeClass('container-wide', 500, 'swing');
         },
-        disposeModalIfNeeded: function() {
+        disposePopupIfNeeded: function() {
             if (this.questionView) {
-                this.questionView.destroy();
+                this.questionView.hidePopup();
+            }
+            if (this.finishView) {
+                this.finishView.hidePopup();
             }
         }
     });

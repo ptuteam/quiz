@@ -13,11 +13,8 @@ define(['app', 'tmpl/game/finish', 'popup', 'jquery-ui'], function(app, tmpl, Qu
             this.render();
             this.showPopup();
         },
-        destroy: function() {
-            this.hidePopup();
-        },
         onReturn: function(event) {
-            this.destroy();
+            this.hidePopup();
             app.router.navigateToMain();
         },
     });

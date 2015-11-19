@@ -15,7 +15,8 @@ Backbone.Popup = Backbone.View.extend({
     },
     hidePopup: function(callback) {
         this.popupContainer.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", (function(event) {
-            this.popupContainer.remove();
+            //Detach vs Remove?
+            this.popupContainer.detach();
             if (typeof callback === 'function' && callback) {
                 callback();
             };

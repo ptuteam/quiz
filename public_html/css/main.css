@@ -3,7 +3,6 @@
 @import url("preloader.css");
 @import url("game.css");
 @import url("popup.css");
-
 body {
     background-image: url("../img/back.png");
     font-family: "Roboto Condensed", sans-serif;
@@ -21,7 +20,7 @@ body {
     display: table;
     box-sizing: border-box;
     min-width: 500px;
-    width: 40%;
+    width: 50%;
 }
 
 .container-wide {
@@ -105,6 +104,7 @@ body {
     color: #fff;
     background-color: #2ecc71;
     box-shadow: 0px 5px 0px 0px #15B358;
+    text-shadow: 1px 2px #2AB33A;
     text-align: center;
     text-decoration: none;
     display: block;
@@ -120,17 +120,42 @@ body {
     background-color: #3AC876;
 }
 
-.menu-button_clear {
-    background-color: #B43F34;
-    box-shadow: 0px 5px 0px 0px #8D3228;
+.menu-type {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.menu-button_clear:hover {
-    background-color: #AD261C;
+.flat-block {
+    box-sizing: border-box;
+    display: flex;
+    width: calc(27.5% - 6px);
+    background-image: url("../img/square_bg.png");
+    height: 170px;
+    background-color: #2ecc71;
+    margin: 6px;
+    margin-top: 0px;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
+    font: 30px "Fira Mono" sans-serif;
+    text-align: center;
+    text-shadow: 1px 2px #2AB33A;
+    box-shadow: 0px 5px 0px 0px #15B358;
+    align-items: center;
+    justify-content: center;
 }
 
-.menu-button_clear:active {
+.flat-block:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
     box-shadow: 0px 1px 0px 0px;
+}
+
+.flat-block:hover {
+    background-color: #35BF70;
 }
 
 .rating-items-list {

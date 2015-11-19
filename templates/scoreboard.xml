@@ -1,6 +1,6 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
 	<fest:if test="json.app.session.get('loggedIn')">
-		<fest:include context="json.app.session.user" src="user.xml"/>
+		<fest:include context="json.app.session.user" src="components/user.xml"/>
 	</fest:if>
     <div class="container-header">
         <h1 class="container-header__title">Рекорды</h1>

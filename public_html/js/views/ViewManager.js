@@ -1,13 +1,15 @@
-define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/game/Game'], function(app, Main, Scoreboard, Login, Game) {
+define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/Start', 'views/game/Game'], function(app, Main, Scoreboard, Login, Start, Game) {
     var ViewManager = Backbone.View.extend({
         currentView: null,
 
+        START_GAME_VIEW: "start",
         GAME_VIEW: "game",
         LOGIN_VIEW: "login",
         MAIN_VIEW: "main",
         SCOREBOARD_VIEW: "scoreboard",
 
         views: {
+            START_GAME_VIEW: null,
             GAME_VIEW: null,
             LOGIN_VIEW: null,
             MAIN_VIEW: null,
@@ -15,6 +17,9 @@ define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/game/Game
         },
 
         initialize: function() {
+            this.views[this.START_GAME_VIEW] = new Start();
+            this.el.appendChild(this.views[this.START_GAME_VIEW].el);
+
             this.views[this.GAME_VIEW] = new Game();
             this.el.appendChild(this.views[this.GAME_VIEW].el);
 
