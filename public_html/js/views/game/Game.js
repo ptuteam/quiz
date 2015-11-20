@@ -9,6 +9,7 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
         onGameStart: function(game) {
             this.game = game;
             this.context = this.game;
+            //Events
             this.listenTo(this.game, 'gameFinish', this.onGameFinish);
             this.listenTo(this.game, 'newQuestion', this.onNewQuestion);
             this.listenTo(this.game, 'roundStart', this.onRoundStart);
@@ -26,7 +27,6 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
         onRoundEnd: function(data) {
             this.disposePopupIfNeeded();
             this.render();
-            console.log("ROUND IND");
         },
         onNewQuestion: function(data) {
             this.questionView = new QuestionView(data);
@@ -43,7 +43,7 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
             this.game.clean();
             this.game = null;
         },
-        //View lifycycle
+        //View lifecycle
         load: function() {
             this.present();
             $(".container").addClass('container-wide', 500, 'swing');
