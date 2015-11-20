@@ -1,4 +1,4 @@
-define(['tmpl/components/searching', 'utils/api/ws/api_ws', 'popup'], function(tmpl, api) {
+define(['tmpl/components/searching', 'popup'], function(tmpl) {
     var view = Backbone.Popup.extend({
         events: {
             'click .js-back': 'onBackButton'

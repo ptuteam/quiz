@@ -1,4 +1,4 @@
-define(["app", "config", "utils/api/ws/api_game"], function(app, config, api_game) {
+define(["app", "utils/api/ws/api_game"], function(app, api_game) {
     return {
         WS_URL: 'ws://' + location.host + '/gameplay',
         currentApi: null,

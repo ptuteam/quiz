@@ -1,4 +1,4 @@
-define(['app', 'backbone', 'tmpl/scoreboard', 'views/BaseView', 'models/Score', 'collections/Scores'], function(app, Backbone, tmpl, BaseView, Score, Scores) {
+define(['tmpl/scoreboard', 'views/BaseView', 'models/Score', 'collections/Scores'], function(tmpl, BaseView, Score, Scores) {
     var View = BaseView.extend({
         template: tmpl,
         collection: new Scores(),

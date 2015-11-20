@@ -1,11 +1,10 @@
-define(['app', 'tmpl/game/question', 'models/game/Question', 'popup', 'jquery-ui'], function(app, tmpl, Question) {
+define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Question) {
     var view = Backbone.Popup.extend({
         events: {
             'click .js-send': 'onAnswer',
         },
         initialize: function(data) {
             this.question = new Question(data);
-            this.listenTo(app.wsEvents, "wsIsCorrectAnswer", this.onCorrectAnswer);
         },
         render: function() {
             this.$el.html(tmpl(this.question));
@@ -13,9 +12,6 @@ define(['app', 'tmpl/game/question', 'models/game/Question', 'popup', 'jquery-ui
         present: function() {
             this.render();
             this.showPopup();
-        },
-        destroy: function() {
-            this.hidePopup();
         },
         onAnswer: function(event) {
             this.question.sendAnswer($(event.target).index(), function() {

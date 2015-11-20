@@ -1,4 +1,4 @@
-define(['app', 'backbone', 'tmpl/login', 'views/BaseView', 'utils/AuthUtils'], function(app, Backbone, tmpl, BaseView, utils) {
+define(['app', 'tmpl/login', 'views/BaseView', 'utils/AuthUtils'], function(app, tmpl, BaseView, utils) {
     var View = BaseView.extend({
         template: tmpl,
         events: {

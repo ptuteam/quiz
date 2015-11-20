@@ -36,7 +36,7 @@ define(['app', 'views/Main', 'views/Scoreboard', 'views/Login', 'views/Start', '
         presentView: function(viewKey) {
             var view = this.views[viewKey];
             //If login required or game required
-            if((view.loginRequire == true && app.session.get('loggedIn') == false) || 
+            if ((view.loginRequire == true && app.session.get('loggedIn') == false) || 
                 (view.gameRequire == true && app.session.get('isInGame') == false)) {
                 this.goToMain();
             } else {

@@ -1,4 +1,4 @@
-define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'utils/api/ws/api_ws'], function(app, tmpl, BaseView, Searching, api) {
+define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'models/game/GameManager'], function(app, tmpl, BaseView, Searching, GameManager) {
     var View = BaseView.extend({
         template: tmpl,
         loginRequire: true,
@@ -9,7 +9,7 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'ut
         initialize: function() {
             this.searching = new Searching();
             this.listenTo(this.searching, 'onBackButton', this.stopSearch);
-            this.listenTo(app.wsEvents, 'wsGameStart', this.onGameStart);
+            this.listenTo(GameManager, 'startGame', this.startGame);
         },
         //Events
         onRandomGame: function() {
@@ -21,13 +21,13 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'ut
         },
         //Searching
         startSearch: function() {
-            api.startConnection();
+            GameManager.searchGame();
         },
         stopSearch: function() {
-            api.closeConnection();
+            GameManager.stopSearch();
         },
         //Transtiton
-        onGameStart: function() {
+        startGame: function(data) {
             setTimeout((function(){
                 this.searching.hidePopup(function() {
                     app.router.navigateTo('#game');

@@ -16,7 +16,6 @@ define(["app"], function(app) {
         return {
             onMessage: function(message) {
                 var data = JSON.parse(message.data);
-                console.log(message);
                 switch(data.code) {
                     case GAME_START: {
                         app.wsEvents.trigger("wsGameStart", data);

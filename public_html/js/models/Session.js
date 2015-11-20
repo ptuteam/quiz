@@ -1,4 +1,4 @@
-define(['backbone', 'app', 'models/User'], function(Backbone, app, UserModel) {
+define(['app', 'models/User'], function(app, UserModel) {
     var Model = Backbone.Model.extend({
         GOOGLE_AUTH: 0,
         GUEST_AUTH: 1,

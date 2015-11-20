@@ -1,4 +1,4 @@
-define(['app', 'tmpl/game/finish', 'popup', 'jquery-ui'], function(app, tmpl, Question) {
+define(['tmpl/game/finish', 'popup'], function(tmpl) {
     var view = Backbone.Popup.extend({
         events: {
             'click .js-return': 'onReturn',
@@ -15,7 +15,7 @@ define(['app', 'tmpl/game/finish', 'popup', 'jquery-ui'], function(app, tmpl, Qu
         },
         onReturn: function(event) {
             this.hidePopup();
-            app.router.navigateToMain();
+            this.trigger('onReturn');
         },
     });
     return view;
