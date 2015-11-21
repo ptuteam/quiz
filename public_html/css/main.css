@@ -81,8 +81,6 @@ body {
     color: #777;
 }
 
-.container-menu {}
-
 .container-menu__menu-button:first-child {
     margin-top: 0px;
 }

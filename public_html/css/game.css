@@ -20,7 +20,6 @@
 
 .content-answers__answer {
     box-sizing: border-box;
-    font-family: "Fira Mono";
     margin: 10px auto;
     width: 70%;
     border-radius: 5px;
@@ -63,7 +62,6 @@
 
 .player-block__username {
     text-transform: uppercase;
-    font-family: "Fira Mono" serif;
     color: #4F7050;
     font-size: 34px;
     font-weight: 400;
@@ -89,7 +87,6 @@
 }
 
 .player-score__points {
-    font-family: "Fira Mono" serif;
     font-size: 60px;
 }
 
@@ -104,7 +101,6 @@
 
 .enemy-block__username {
     text-transform: uppercase;
-    font-family: "Fira Mono";
     color: #8C694B;
     font-size: 34px;
     font-weight: 400;
@@ -128,7 +124,6 @@
 }
 
 .enemy-score__points {
-    font-family: "Fira Mono" serif;
     font-size: 60px;
 }
 
@@ -136,7 +131,6 @@
     position: relative;
     box-sizing: border-box;
     bottom: 230px;
-    font-family: "Fira Mono" serif;
     color: white;
     font-size: 30px;
     border-radius: 50%;
@@ -203,7 +197,6 @@
 
 .content-answers__answer {
     box-sizing: border-box;
-    font-family: "Fira Mono";
     margin: 10px auto;
     width: 70%;
     border-radius: 5px;
