@@ -8,17 +8,19 @@
         <meta property="og:description" content="Очень затягивающая мультиплеерная игра"/>
     </head>
     <body>
-        <div id="loader-wrapper">
+        <div id="loader-wrapper" class="preloader">
             <div id="loader"></div>
         </div>
         <div class="container"></div>
-        <script data-main="js/requireconf" src="js/lib/require.js"></script>
         <script>
             (function () {
                 window.onload = function () {
-                    document.getElementById('loader-wrapper').style.display = "none";
+                    var delay = 250;
+                    $("#loader").delay(delay).fadeOut(250);
+                    $("#loader-wrapper").delay(delay + 100).fadeOut(250);
                 };
             })();
         </script>
+        <script src="js/build/build.min.js"></script>
     </body>
 </html>

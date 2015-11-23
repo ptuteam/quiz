@@ -54,6 +54,9 @@ quiz-server.jar
 socials.properties
 database.properties
 
+build-r.js
+style_b.css
+
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
@@ -68,4 +71,6 @@ node_modules
 .sass-cache/
 *.css.map
 .DS_Store
+
+
 

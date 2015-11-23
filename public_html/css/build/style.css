@@ -261,6 +261,9 @@ body {
     box-shadow: 0px 1px 0px 0px; }
   .b-gametype__type:hover {
     background-color: #35BF70; }
+
+.preloader {
+  background-image: url("../../img/back.png"); }
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -358,7 +361,7 @@ body {
 }
 
 
-/* Gavno - perepilit' vse*/
+/* Gavno dlya igry - perepilit' vse!!!*/
 .container-game {
     text-align: center;
 }

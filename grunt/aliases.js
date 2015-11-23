@@ -1,4 +1,4 @@
 module.exports = {
-	'default':['clean', 'concurrent:run'],
+	'default':['clean', 'requirejs', 'uglify', 'concurrent:run'],
 	'build':['shell:buildServer']
 }
