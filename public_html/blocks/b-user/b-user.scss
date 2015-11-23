@@ -1,0 +1,10 @@
+.b-user {
+    height: 70px;
+    background-color: rgba(28, 162, 88, 1);
+    background-image: url("../../img/square_bg.png");
+    border-radius: 3px 3px 0px 0px;
+    overflow: hidden;
+}
+
+@import "__avatar/b-user__avatar";
+@import "__username/b-user__username";

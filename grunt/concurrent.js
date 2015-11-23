@@ -3,5 +3,5 @@ module.exports = {
         logConcurrentOutput: true
     },
 
-    target: ['watch', 'shell:runServer'],
+    run: ['watch', 'shell:runServer'],
 };

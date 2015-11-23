@@ -1,22 +1,22 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-	<fest:if test="json.app.session.get('loggedIn')">
-		<fest:include context="json.app.session.user" src="components/user.xml"/>
-	</fest:if>
-    <div class="container-header">
-        <h1 class="container-header__title">Рекорды</h1>
-    </div>
-    <div class="container-content">
+	<div class="container__header">
+		<fest:if test="json.app.session.get('loggedIn')">
+			<fest:include context="json.app.session.user" src="components/user.xml"/>
+		</fest:if>
+	</div>
+	<div class="container__body">
+	    <h1 class="b-title">Рекорды</h1>
     	<fest:if test="json.arg.models.length">
-	        <ul class="rating-items-list">
+	        <ul class="b-scores">
 	            <fest:for iterate="json.arg.models" index="i">
-	            <li class='rating-items-list-element'>
-	                <div class="rating-item">
-	                    <div class="rating-item__name">
+	            <li class='b-scores__li'>
+	                <div class="b-scores__score">
+	                    <div class="b-scores__username">
 	                        <fest:value output="text">
-	                        (i+1)+'. '+json.arg.models[i].get('first_name') + ' ' + json.arg.models[i].get('last_name');
+	                        json.arg.models[i].get('first_name') + ' ' + json.arg.models[i].get('last_name');
 	                        </fest:value>
 	                    </div>
-	                    <div class="rating-item__score">
+	                    <div class="b-scores__points">
 	                        <fest:value output="text">
 	                        json.arg.models[i].get('score');
 	                        </fest:value>
@@ -26,8 +26,8 @@
 	            </fest:for>
 	        </ul>
         </fest:if>
-    </div>
-    <div class="container-menu">
-        <a href='#' class="container-menu__menu-button js-back">Назад</a>
-    </div>
+	    <div class="b-menu">
+	        <a href='#' class="b-button b-menu__button js-back">Назад</a>
+	    </div>
+	</div>
 </fest:template>

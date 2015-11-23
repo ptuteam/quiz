@@ -14,11 +14,11 @@ define(['app', 'models/game/Game', 'utils/api/ws/api_ws'], function(app, Game, a
         },
         startGame: function(data) {
             this.game = new Game(data);
+            this.listenTo(this.game, 'gameAborted', this.stopGame);
             this.trigger('startGame', this.game);
         },
         stopGame: function() {
             api.closeConnection();
-            this.game.clean();
             this.game = null;
         }, 
     });

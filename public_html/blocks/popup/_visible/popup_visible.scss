@@ -1,0 +1,11 @@
+@mixin trans_r($time) {
+  -webkit-transition: opacity $time 0s, visibility 0s 0s;
+  -moz-transition: opacity $time 0s, visibility 0s 0s;
+  transition: opacity $time 0s, visibility 0s 0s;
+}
+
+.popup_visible {
+  opacity: 1;
+  visibility: visible;
+  @include trans_r(0.3s);
+}

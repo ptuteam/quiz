@@ -14,7 +14,7 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'mo
         //Events
         onRandomGame: function() {
             this.startSearch();
-            this.searching.render().showPopup();
+            this.searching.present();
         },
         onFriendGame: function() {
             //TODO
@@ -24,6 +24,7 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'mo
             GameManager.searchGame();
         },
         stopSearch: function() {
+            this.searching.hidePopup();
             GameManager.stopSearch();
         },
         //Transtiton

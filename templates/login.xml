@@ -1,10 +1,10 @@
 <fest:template xmlns:fest="http://fest.mail.ru">
-    <div class="container-header">
-        <h1 class="container-header__title">Вход</h1>
-    </div>
-    <div class="container-menu">
-    	<div class="container-menu__menu-button js-guest">Зайти как гость</div>
-        <div class="container-menu__menu-button js-google">Войти через Google+</div>
-        <a href="#" class="container-menu__menu-button js-back">Назад</a>
-    </div>
+	<div class="container__body">
+	    <h1 class="b-title">Вход</h1>
+	    <div class="b-menu">
+	    	<div class="b-button b-menu__button js-guest">Зайти как гость</div>
+	        <div class="b-button b-menu__button js-google">Войти через Google+</div>
+	        <a href="#" class="b-button b-menu__button js-back">Назад</a>
+	    </div>
+	</div>
 </fest:template>

@@ -1,20 +1,21 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-	<fest:if test="json.app.session.get('loggedIn')">
-		<fest:include context="json.app.session.user" src="components/user.xml"/>
-	</fest:if>
-	<div class="container-header">
-		<h1 class="container-header__title title_logo">KVIZ</h1>
+	<div class="container__header">
+		<fest:if test="json.app.session.get('loggedIn')">
+			<fest:include context="json.app.session.user" src="components/user.xml"/>
+		</fest:if>
 	</div>
-	<div class="container-menu">
-	<fest:if test="!json.app.session.get('loggedIn')">
-		<a href='#login' class="container-menu__menu-button">Войти</a>
-		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
-    </fest:if>
-    <fest:if test="json.app.session.get('loggedIn')">
-        <a href='#start' class="container-menu__menu-button">Начать</a>
-		<a href='#scoreboard' class="container-menu__menu-button">Рекорды</a>
-		<div class="container-menu__menu-button js-logout">Выйти</div>
-    </fest:if>
-
+	<div class="container__body">
+		<div class="b-title title_large">KVIZ</div>
+		<div class="b-menu">
+			<fest:if test="!json.app.session.get('loggedIn')">
+				<a href='#login' class="b-button b-menu__button">Войти</a>
+				<a href='#scoreboard' class="b-button b-menu__button">Рекорды</a>
+		    </fest:if>
+		    <fest:if test="json.app.session.get('loggedIn')">
+		        <a href='#start' class="b-button b-menu__button">Начать</a>
+				<a href='#scoreboard' class="b-button b-menu__button">Рекорды</a>
+				<div class="b-button b-menu__button js-logout">Выйти</div>
+		    </fest:if>
+		</div>
 	</div>
 </fest:template>

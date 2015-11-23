@@ -11,7 +11,6 @@ define(['tmpl/components/searching', 'popup'], function(tmpl) {
         },
         onBackButton: function() {
             this.trigger('onBackButton');
-            this.hidePopup();
         },
     });
     return view;

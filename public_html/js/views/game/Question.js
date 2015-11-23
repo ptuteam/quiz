@@ -1,5 +1,6 @@
 define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Question) {
     var view = Backbone.Popup.extend({
+        className: 'popup__container popup__container_large',
         events: {
             'click .js-send': 'onAnswer',
         },
@@ -9,13 +10,9 @@ define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Q
         render: function() {
             this.$el.html(tmpl(this.question));
         },
-        present: function() {
-            this.render();
-            this.showPopup();
-        },
         onAnswer: function(event) {
             this.question.sendAnswer($(event.target).index(), function() {
-                $(event.target).addClass('answer-chosen');
+                $(event.target).addClass('answer_chosen');
             });
         },
         onCorrectAnswer: function(data) {

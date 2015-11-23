@@ -35,8 +35,9 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
             var question = new Question(data.question);
             this.trigger('newQuestion', question);
         },
-        clean: function() {
+        abort: function() {
             this.stopListening();
+            this.trigger('gameAborted');
             return this;
         }
     });

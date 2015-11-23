@@ -15,5 +15,13 @@ module.exports = {
                 port:19234,
             }
         }
+    },
+    sass: {
+        files: ['public_html/**/*.scss'],
+        tasks: ['clean', 'sass', 'concat_css', 'cssmin'],
+        options: {
+            atBegin: true,
+            interrupt: true
+        }
     }
 };

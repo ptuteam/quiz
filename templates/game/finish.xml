@@ -1,21 +1,19 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-<div class="container-modal">
-	<div class="finish-title">Победитель</div>
-	<div class="finish-winner">
-		<div class="finish-winner__name">
-			<fest:value output="text">
-        		json.name + ' ' + json.lastname    
-        	</fest:value>
-        </div>
-        <div class="finish-winner__score">
-			<fest:value output="text">
-        		json.score    
-        	</fest:value>
-        </div>
-		<div class="finish-winner-avatar">
-			<img class="finish-winner-avatar__avatar" src="{json.avatar}"></img>
-		</div>
-		<div class="modal__menu-button js-return">Главное меню</div>
-	</div>	
+<div class="b-finish">
+	<div class="b-title b-finish__title">Победитель</div>
+	<div class="b-finish__username">
+		<fest:value output="text">
+    		json.name + ' ' + json.lastname    
+    	</fest:value>
+    </div>
+    <div class="b-finish__score">
+		<fest:value output="text">
+    		json.score    
+    	</fest:value>
+    </div>
+	<div class="b-finish-avatar">
+		<img class="b-finish-avatar__avatar" src="{json.avatar}"></img>
+	</div>
+	<div class="b-button b-finish__button js-return">Главное меню</div>
 </div>
 </fest:template>

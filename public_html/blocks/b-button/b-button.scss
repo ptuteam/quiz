@@ -1,0 +1,25 @@
+.b-button {
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 55%;
+    border-radius: 5px;
+    padding: 13px 13px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+    text-shadow: 1px 2px #2AB33A;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    &:active {
+        @include transform(translate(0px, 5px));
+        box-shadow: 0px 1px 0px 0px;
+    }
+    &:hover {
+        background-color: #3AC876;
+    }
+}
+

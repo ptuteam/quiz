@@ -1,0 +1,30 @@
+@mixin trans_dur ($time) {
+  -webkit-transition-duration: $time;
+  -moz-transition-duration: $time;
+  transition-duration: $time;
+}
+
+@mixin trans_prop($prop) {
+  -webkit-transition-property: -webkit+ -$prop;
+  -moz-transition-property: -moz+ -$prop;
+  transition-property: $prop;
+}
+
+.popup__container {
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  background: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  @include scale(1.5, 1.5);
+  @include trans_dur(0.3s);
+  @include trans_prop(transform);
+  -webkit-backface-visibility: hidden;
+}
+
+@import "_large/popup__container_large";
+
+

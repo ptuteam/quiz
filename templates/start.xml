@@ -1,12 +1,16 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-	<fest:if test="json.app.session.get('loggedIn')">
-		<fest:include context="json.app.session.user" src="components/user.xml"/>
-	</fest:if>
-    <div class="container-menu">
-    	<div class="menu-type">
-    		<div class="flat-block js-random">RAND</div>
-        	<div class="flat-block js-friend">FRIEND</div>
+    <div class="container__header">
+    	<fest:if test="json.app.session.get('loggedIn')">
+    		<fest:include context="json.app.session.user" src="components/user.xml"/>
+    	</fest:if>
+    </div>
+    <div class="container__body">
+    	<div class="b-gametype">
+    		<div class="b-gametype__type js-random">RAND</div>
+        	<div class="b-gametype__type js-friend">FRIEND</div>
         </div>	
-        <a href="#" class="container-menu__menu-button js-back">Назад</a>
+        <div class="b-menu">
+            <a href="#" class="b-button b-menu__button js-back">Назад</a>
+        </div>
     </div>
 </fest:template>

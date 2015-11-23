@@ -1,0 +1,10 @@
+.b-scores {
+	list-style-type: none;
+    margin: auto;
+    padding: 5px 15px 5px;
+    width: 55%;
+}
+
+@import "__username/b-scores__username";
+@import "__score/b-scores__score";
+@import "__points/b-scores__points";

@@ -9,12 +9,7 @@ define(['tmpl/game/finish', 'popup'], function(tmpl) {
         render: function() {
             this.$el.html(tmpl(this.winner));
         },
-        present: function() {
-            this.render();
-            this.showPopup();
-        },
         onReturn: function(event) {
-            this.hidePopup();
             this.trigger('onReturn');
         },
     });

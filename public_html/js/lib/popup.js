@@ -3,9 +3,9 @@
 // Copyright (C) 2015 
 // Maxim Pedchenko
 Backbone.Popup = Backbone.View.extend({
-    className: 'popup-container',
+    className: 'popup__container',
     pClassName: 'popup',
-    paClassName: 'popup-visible',
+    paClassName: 'popup_visible',
     animationDuration: 300,
     popupContainer: null,
     initialize: function() {},
@@ -28,4 +28,8 @@ Backbone.Popup = Backbone.View.extend({
             class: this.pClassName
         }).appendTo('body');
     },
+    present: function() {
+        this.render();
+        this.showPopup();
+    }
 });

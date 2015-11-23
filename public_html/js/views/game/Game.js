@@ -6,6 +6,7 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
         initialize: function() {
             this.listenTo(GameManager, 'startGame', this.onGameStart);
         },
+        //Game events
         onGameStart: function(game) {
             this.game = game;
             this.context = this.game;
@@ -25,7 +26,7 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
             //Do something
         },
         onRoundEnd: function(data) {
-            this.disposePopupIfNeeded();
+            this.disposePopupIfNeeded(this.questionView);
             this.render();
         },
         onNewQuestion: function(data) {
@@ -33,29 +34,39 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
             this.questionView.present();
         },
         onPlayerDisconnected: function() {
-            this.disposePopupIfNeeded();
+            this.disposePopupIfNeeded(this.questionView);
         },
-        //Handlers
+        //Popup functions
         onReturnClick: function() {
             app.router.navigateToMain();
-            this.stopListening(this.game);
-            this.stopListening(this.finishView);
-            this.game.clean();
-            this.game = null;
+        },
+        disposePopupIfNeeded: function(popup) {
+            if (popup) {
+                popup.hidePopup();
+            }
         },
         //View lifecycle
         load: function() {
             this.present();
-            $(".container").addClass('container-wide', 500, 'swing');
+            $(".container").addClass('container_wide', 500, 'swing');
         },
         unload: function() {
             this.hide();
-            $('.container').removeClass('container-wide', 500, 'swing');
+            this.onViewUnload();
+            this.trigger('unload');
+            $('.container').removeClass('container_wide', 500, 'swing');
         },
-        disposePopupIfNeeded: function() {
-            if (this.questionView) {
-                this.questionView.hidePopup();
-            }
+        onViewUnload: function() {
+            //Stop listening to the game events
+            this.stopListening(this.game);
+            this.stopListening(this.finishView);
+            //Destroy game
+            this.game.abort();
+            this.game = null;
+            //Remove popups
+            this.disposePopupIfNeeded(this.questionView);
+            this.disposePopupIfNeeded(this.finishView);
+            
         }
     });
     return View;

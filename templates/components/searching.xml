@@ -1,7 +1,7 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
-<div class="container-modal">
-	<div class="modal__title">Поиск игры</div>
-    <div id="loader" class="modal__loader"></div>
-    <div class="modal__menu-button js-back">Назад</div>
+<div class="b-search-game">
+	<div class="b-search-game__title">Поиск игры</div>
+    <div id="loader" class="b-search-game__preloader"></div>
+    <div class="b-button b-search-game__button js-back">Назад</div>
 </div>
 </fest:template>

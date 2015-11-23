@@ -1,0 +1,33 @@
+@mixin trans($time) {
+  -webkit-transition: opacity $time 0s, visibility 0s $time;
+  -moz-transition: opacity $time 0s, visibility 0s $time;
+  transition: opacity $time 0s, visibility 0s $time;
+}
+
+@mixin scale($value1, $value2) {
+  -webkit-transform: scale($value1, $value2);
+  -moz-transform: scale($value1, $value2);
+  -ms-transform: scale($value1, $value2);
+  -o-transform: scale($value1, $value2);
+  transform: scale($value1, $value2);
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  @include trans(0.3s);
+}
+
+.popup_visible .popup__container {
+  @include scale(1.0 ,1.0);
+}
+
+@import "_visible/popup_visible";
+@import "__container/popup__container";
+
