@@ -21,7 +21,7 @@ Turn-based strategy to check your intelligence level.
 
 3. Install npm dependencies:
 
-   ``` npm update ```
+   ``` npm install ```
 
 4. Build a server:
 
