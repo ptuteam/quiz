@@ -7,23 +7,25 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'mo
             'click .js-friend': 'onFriendGame',
         },
         initialize: function() {
-            this.searching = new Searching();
-            this.listenTo(this.searching, 'onBackButton', this.stopSearch);
             this.listenTo(GameManager, 'startGame', this.startGame);
         },
         //Events
         onRandomGame: function() {
             this.startSearch();
-            this.searching.present();
         },
         onFriendGame: function() {
             //TODO
         },
         //Searching
         startSearch: function() {
+            this.searching = new Searching();
+            this.searching.present();
+            
+            this.listenTo(this.searching, 'onBackButton', this.stopSearch);
             GameManager.searchGame();
         },
         stopSearch: function() {
+            this.stopListening(this.searching);
             this.searching.hidePopup();
             GameManager.stopSearch();
         },

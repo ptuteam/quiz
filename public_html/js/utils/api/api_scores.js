@@ -16,7 +16,7 @@ define(['jquery'], function($) {
                 scores.fail(function() {
                     def.reject("Ошибка подключения");
                 });
-                return def;
+                return def.promise();
             }
         }
     })();

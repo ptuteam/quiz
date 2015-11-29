@@ -14,6 +14,7 @@ define(["app"], function(app) {
 
 
         return {
+            ANSWER_CODE: ANSWER,
             onMessage: function(message) {
                 var data = JSON.parse(message.data);
                 switch(data.code) {
@@ -35,10 +36,6 @@ define(["app"], function(app) {
                     }
                     case NEW_QUESTION: {
                         app.wsEvents.trigger("wsNewQuestion", data);
-                        break;
-                    }
-                    case ANSWER: {
-                        app.wsEvents.trigger("wsAnswer", data);
                         break;
                     }
                     case TOO_MANY_ROOMS: {

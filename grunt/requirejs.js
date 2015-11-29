@@ -4,7 +4,7 @@ module.exports = {
             baseUrl: "public_html/js",
             mainConfigFile: "public_html/js/requireconf.js",
             name: "lib/almond",
-            include: 'main',
+            include: 'requireconf',
             optimize: "none",
             out: "public_html/js/build/build-r.js"
         }

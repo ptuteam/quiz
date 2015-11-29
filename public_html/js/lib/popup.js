@@ -8,20 +8,20 @@ Backbone.Popup = Backbone.View.extend({
     paClassName: 'popup_visible',
     animationDuration: 300,
     popupContainer: null,
-    initialize: function() {},
+    initialize: function() {
+    },
     showPopup: function() {
         this.ensureModalContainer();
         this.popupContainer.append(this.$el).hide().toggleClass(this.paClassName).show();
     },
     hidePopup: function(callback) {
-        this.popupContainer.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", (function(event) {
-            //Detach vs Remove?
-            this.popupContainer.detach();
+        this.popupContainer.toggleClass(this.paClassName);
+        setTimeout((function() {
+            this.popupContainer.remove();
             if (typeof callback === 'function' && callback) {
                 callback();
             };
-        }).bind(this));
-        this.popupContainer.toggleClass(this.paClassName);
+        }).bind(this), this.animationDuration);
     },
     ensureModalContainer: function() {
         this.popupContainer = $('<div>', {

@@ -1,4 +1,4 @@
-require(['backbone', 'router', 'app', 'models/Session'], function(Backbone, router, app, Session) {
+define(['backbone', 'router', 'app', 'models/Session'], function(Backbone, router, app, Session) {
     app.session = new Session();
     app.router = router;
     window.onSocialAuth = function() {

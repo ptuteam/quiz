@@ -31,13 +31,16 @@ define(["app", "utils/api/ws/api_game"], function(app, api_game) {
         onError:function() {
         	console.log("Socket is fucked");
         },
-        sendAnswer: function(title) {
+        send: function(data) {
+            this.socket.send(data);
+        },
+        sendAnswer: function(answer) {
             var data = {
-                "code": 6,
-                "answer": title
+                code: api_game.ANSWER_CODE,
+                answer: answer
             };
-
-            this.socket.send(JSON.stringify(data));
+            console.log(data);
+            this.send(JSON.stringify(data));
         }
     };
 });

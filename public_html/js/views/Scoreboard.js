@@ -4,7 +4,7 @@ define(['tmpl/scoreboard', 'views/BaseView', 'models/Score', 'collections/Scores
         collection: new Scores(),
         initialize: function() {
             this.context = this.collection;
-            this.listenTo(this.collection, 'scores_fetched', this.onLoadComplete);
+            this.listenTo(this.collection, 'scores_loaded', this.onLoadComplete);
         },
         load: function() {
             this.collection.fetch();

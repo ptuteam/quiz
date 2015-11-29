@@ -23,7 +23,6 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
             this.listenTo(this.finishView, 'onReturn', this.onReturnClick);
         },
         onRoundStart: function() {
-            //Do something
         },
         onRoundEnd: function(data) {
             this.disposePopupIfNeeded(this.questionView);

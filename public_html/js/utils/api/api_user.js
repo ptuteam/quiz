@@ -9,7 +9,7 @@ define(['jquery', 'utils/AuthUtils', 'config'], function($, util, config) {
                 }).fail(function() {
                     def.reject("Ошибка подключения");
                 });
-                return def;
+                return def.promise();
             }
         }
     })();

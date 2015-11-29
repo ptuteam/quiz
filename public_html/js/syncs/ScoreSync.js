@@ -9,11 +9,10 @@ define(['app'], function(app) {
                     app.api.scores.loadRating().then(this.successLoadingHandler, this.errorLoadingHandler);
                 },
                 successLoadingHandler: function(data) {
-                    collection.set(data);
-                    collection.trigger('scores_fetched');
+                    collection.onLoad(data);
                 },
                 errorLoadingHandler: function(message) {
-                    collection.trigger('scores_fetch:error', message);
+                    collection.onErrorLoad();
                 }
             },
         };

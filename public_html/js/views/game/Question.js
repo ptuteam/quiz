@@ -11,7 +11,7 @@ define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Q
             this.$el.html(tmpl(this.question));
         },
         onAnswer: function(event) {
-            this.question.sendAnswer($(event.target).index(), function() {
+            this.question.sendAnswer($(event.target).index('.b-question__answer'), function() {
                 $(event.target).addClass('answer_chosen');
             });
         },
