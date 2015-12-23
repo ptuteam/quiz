@@ -1,0 +1,105 @@
+@media only screen and (max-width:800px) {
+	.container {
+		margin: 0px;
+		width: 100%;
+		height: 100%;
+		min-width: 0px;
+	}
+
+	.title_large {
+		font-size: 18vh;
+	}
+
+	.b-menu__button {
+		width: 80%;
+	}
+
+	.b-gametype__type {
+		width: calc(40% - 6px);
+	}
+
+	.popup__container {
+		overflow: hidden;
+		width: 90%;
+		margin: auto;
+		margin-top: 10vh;
+	}
+	/*Game responsive style*/
+	.b-game {
+		overflow: hidden;
+	}
+
+	.b-game__player {
+		width:100%;
+	}
+
+	.b-player__image {
+		height: 15vh;
+		border: 0.4vh solid #4F7050;
+		width: auto;
+	}
+
+	.b-player__score {
+		height: 15%;
+    	margin-top: 2vh;
+		margin-bottom: 0px;
+    	font-size: 5vh;
+	}
+
+	.b-player__username {
+		font-size: 3vh;
+		margin: 0px;
+		margin-bottom: 2vh;
+	}
+
+	.versus-block {
+		display: none;
+	}
+
+	/*Finish popup responsive*/
+	.b-finish {
+		padding-bottom: 3vh;
+	}
+
+	.b-finish-avatar__avatar {
+		margin-bottom: 2vh;
+	}
+
+	.b-finish__title {
+		margin: 0px;
+		font-size: 40px;
+	}
+
+	.b-finish__username {
+		margin: 0px;
+		font-size: 4vh;
+	}
+
+	.b-finish__score {
+		margin: 0px;
+	}
+
+	.b-finish__button {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-size: 4vh;
+	}
+
+	/*Question popup responsive*/
+	.b-question {
+		padding: 4vh;
+		font-size: 3vh;
+	}
+
+	.b-question__title {
+		margin: 20px auto;
+	}
+
+	.b-question__answer {
+		width: 80%;
+		font-size: 2vh;
+		padding: 6px;
+		border-radius: 3px;
+		box-shadow: 0 2px 0 0 #15B358;
+	}
+}

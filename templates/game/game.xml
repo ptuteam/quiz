@@ -3,39 +3,35 @@
 		<fest:include context="json.app.session.user" src="../components/user.xml"/>
 	</fest:if>
 
-	<div class="container-game">
-		<div class="game-player">
-			<div class="player-score">
-				<div class="player-score__points">
+	<div class="b-game">
+		<div class="b-game__player">
+			<div class="b-player__score">
 					<fest:value output="text">
 	        			json.arg.player.score    
 	        		</fest:value>
-	        	</div>
 			</div>
-			<div class="player-block">
-       			<div class="player-block-avatar">
-       				<img class="player-block-avatar__image" src="{json.arg.player.get('avatar')}"/>
+			<div class="b-player">
+       			<div class="b-player__avatar">
+       				<img class="b-player__image" src="{json.arg.player.get('avatar')}"/>
        			</div>
-       			<div class="player-block__username">
+       			<div class="b-player__username">
 					<fest:value output="text">
 	        			json.arg.player.name    
 	        		</fest:value>
 	       		</div>
 			</div>
 		</div>
-		<div class="game-enemy">
-			<div class="enemy-score">
-				<div class="enemy-score__points">
+		<div class="b-game__player b-game__player_opponent">
+			<div class="b-player__score score_opponent">
 					<fest:value output="text">
 	        			json.arg.opponent.score   
 	        		</fest:value>
-				</div>
 			</div>
-			<div class="enemy-block">
-				<div class="enemy-block-avatar">
-					<img class="enemy-block-avatar__image" src="{json.arg.opponent.get('avatar')}"/>
+			<div class="b-player b-player_opponent">
+				<div class="b-player__avatar b-player__avatar_opponent">
+					<img class="b-player__image b-player__image_opponent" src="{json.arg.opponent.get('avatar')}"/>
 				</div>
-				<div class="enemy-block__username">
+				<div class="b-player__username b-player__username_opponent">
 					<fest:value output="text">
 	        			json.arg.opponent.name     
 	        		</fest:value>

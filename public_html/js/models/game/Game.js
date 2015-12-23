@@ -41,6 +41,5 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
             return this;
         }
     });
-    //Singleton
     return Model;
 });

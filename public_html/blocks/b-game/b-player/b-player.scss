@@ -1,0 +1,9 @@
+.b-player {
+	margin: auto;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+@import "__avatar/b-player__avatar";
+@import "__score/b-player__score";
+@import "__username/b-player__username";

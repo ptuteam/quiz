@@ -12,6 +12,7 @@ body {
 
 @import "b-button/b-button";
 @import "b-menu/b-menu";
+@import "b-game/b-game";
 @import "b-question/b-question";
 @import "b-scores/b-scores";
 @import "b-search-game/b-search-game";
@@ -22,3 +23,5 @@ body {
 @import "popup/popup";
 @import "b-gametype/b-gametype";
 @import "preloader/preloader";
+@import "mobile";
+

@@ -19,8 +19,9 @@ define(['app', 'models/game/Game', 'utils/api/ws/api_ws'], function(app, Game, a
         },
         stopGame: function() {
             api.closeConnection();
+            this.stopListening(this.game);
             this.game = null;
-        }, 
+        },
     });
     return new Manager();
 });

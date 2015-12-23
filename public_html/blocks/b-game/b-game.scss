@@ -1,3 +1,6 @@
 .b-game {
-	
+	text-align: center;
 }
+
+@import "__player/b-game__player";
+@import "b-player/b-player";

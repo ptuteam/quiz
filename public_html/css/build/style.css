@@ -31,6 +31,46 @@ body {
 .b-menu {
   margin-bottom: 50px; }
 
+.b-game {
+  text-align: center; }
+
+.b-game__player {
+  width: 50%;
+  display: inline-block;
+  background-color: #E0FFE8;
+  vertical-align: bottom; }
+
+.b-game__player_opponent {
+  background-color: #fff9ef; }
+
+.b-player {
+  margin: auto;
+  width: 50%;
+  box-sizing: border-box; }
+
+.b-player__avatar {
+  box-sizing: border-box; }
+
+.b-player__image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #4F7050; }
+
+.b-player__score {
+  color: #4F7067;
+  height: 15%;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 60px; }
+
+.b-player__username {
+  text-transform: uppercase;
+  color: #4F7050;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 35px 0px; }
+
 .b-question {
   color: #555;
   padding: 25px;
@@ -264,6 +304,73 @@ body {
 
 .preloader {
   background-image: url("../../img/back.png"); }
+
+@media only screen and (max-width: 800px) {
+  .container {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    min-width: 0px; }
+  .title_large {
+    font-size: 18vh; }
+  .b-menu__button {
+    width: 80%; }
+  .b-gametype__type {
+    width: calc(40% - 6px); }
+  .popup__container {
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+    margin-top: 10vh; }
+  /*Game responsive style*/
+  .b-game {
+    overflow: hidden; }
+  .b-game__player {
+    width: 100%; }
+  .b-player__image {
+    height: 15vh;
+    border: 0.4vh solid #4F7050;
+    width: auto; }
+  .b-player__score {
+    height: 15%;
+    margin-top: 2vh;
+    margin-bottom: 0px;
+    font-size: 5vh; }
+  .b-player__username {
+    font-size: 3vh;
+    margin: 0px;
+    margin-bottom: 2vh; }
+  .versus-block {
+    display: none; }
+  /*Finish popup responsive*/
+  .b-finish {
+    padding-bottom: 3vh; }
+  .b-finish-avatar__avatar {
+    margin-bottom: 2vh; }
+  .b-finish__title {
+    margin: 0px;
+    font-size: 40px; }
+  .b-finish__username {
+    margin: 0px;
+    font-size: 4vh; }
+  .b-finish__score {
+    margin: 0px; }
+  .b-finish__button {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 4vh; }
+  /*Question popup responsive*/
+  .b-question {
+    padding: 4vh;
+    font-size: 3vh; }
+  .b-question__title {
+    margin: 20px auto; }
+  .b-question__answer {
+    width: 80%;
+    font-size: 2vh;
+    padding: 6px;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 0 #15B358; } }
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -358,102 +465,6 @@ body {
         transform: rotate(360deg);
         /* Firefox 16+, IE 10+, Opera */
     }
-}
-
-
-/* Gavno dlya igry - perepilit' vse!!!*/
-.container-game {
-    text-align: center;
-}
-
-.game-player {
-    width: 50%;
-    display: inline-block;
-    background-color: #E0FFE8;
-    vertical-align: bottom;
-}
-
-.game-enemy {
-    width: 50%;
-    background-color: #fff9ef;
-    display: inline-block;
-    vertical-align: bottom;
-}
-
-
-/*Right part of game container*/
-
-.player-block {
-    margin: auto;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-.player-block__username {
-    text-transform: uppercase;
-    color: #4F7050;
-    font-size: 34px;
-    font-weight: 400;
-    margin: 35px 0px;
-}
-
-.player-block-avatar {
-    box-sizing: border-box;
-}
-
-.player-block-avatar__image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #4F7050;
-}
-
-.player-score {
-    color: #4F7067;
-    height: 15%;
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
-
-.player-score__points {
-    font-size: 60px;
-}
-
-
-/*Left part of game container*/
-
-.enemy-block {
-    margin: auto;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-.enemy-block__username {
-    text-transform: uppercase;
-    color: #8C694B;
-    font-size: 34px;
-    font-weight: 400;
-    margin: 35px 0px;
-}
-
-.enemy-block-avatar {}
-
-.enemy-block-avatar__image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #8C694B;
-}
-
-.enemy-score {
-    color: #8C694B;
-    height: 15%;
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
-
-.enemy-score__points {
-    font-size: 60px;
 }
 
 .versus-block {
