@@ -22,7 +22,7 @@
 		overflow: hidden;
 		width: 90%;
 		margin: auto;
-		margin-top: 10vh;
+		margin-top: 3vh;
 	}
 	/*Game responsive style*/
 	.b-game {
@@ -82,7 +82,7 @@
 	.b-finish__button {
 		margin-top: 0px;
 		margin-bottom: 0px;
-		font-size: 4vh;
+		font-size: 3vh;
 	}
 
 	/*Question popup responsive*/
@@ -100,6 +100,8 @@
 		font-size: 2vh;
 		padding: 6px;
 		border-radius: 3px;
+		margin-bottom: 1vh;
+		margin-top: 1vh;
 		box-shadow: 0 2px 0 0 #15B358;
 	}
 }
