@@ -1,22 +1,28 @@
-define(['backbone', 'tmpl/components/friend_join'], function(Backbone, tmpl) {
+define(['views/components/Spinner', 'tmpl/components/friend_join'], function(Spinner, tmpl) {
     var view = Backbone.View.extend({
         events: {
             'click .js-back': 'onBackButton',
-            'click .js-join-room': 'onRoomJoin',
+            'click .js-join-room': 'onRoomJoinButton',
             'keypress': function(event) {
                 if (event.keyCode === 13) {
                     this.onRoomJoin();
                 }
+            },
+            'focus .b-friend-join__room': function() {
+                this.trigger('onInputFocus');
+                Spinner.hide();
             }
         },
         render: function() {
             this.$el.html(tmpl());
             return this
         },
-        onRoomJoin: function() {
+        onRoomJoinButton: function() {
             var input = document.getElementById('input_room');
             if (this.validate(input)) {
                 this.trigger('onRoomJoinButton', input.value);
+                input.blur();
+                Spinner.show();
             }
         },
         onBackButton: function() {

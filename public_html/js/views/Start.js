@@ -30,7 +30,7 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'vi
             this.listenTo(this.popup, 'onJoinButton', this.startSearch);
 
             this.listenTo(this.popup, 'onBackButton', this.disposePopupIfNeeded);
-            this.listenTo(this.popup, 'onModeBackButton', this.stopSearch)
+            this.listenTo(this.popup, 'onModeBackButton abortSearch', this.stopSearch);
         },
         //Searching
         startSearch: function(context) {

@@ -3,6 +3,10 @@
 	<div class="b-friend-join__title">Соединиться</div>
 	<div class="b-friend-join__subtitle">Комната:</div>
 	<input id="input_room" class="b-friend-join__room" type="number" min="0"/>
+	<div class="spinner_wrapper" style="display:none">
+		<div class="three-quarters-loader">
+		</div>
+	</div>
 	<div class="b-button b-friend-join__button js-join-room">Коннект</div>
     <div class="b-button b-friend-join__button js-back">Назад</div>
 </div>
