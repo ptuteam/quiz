@@ -1,0 +1,10 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+<div class="b-friend-game">
+	<div id='wrapper'>
+		<div class="b-friend-game__title">Игра с другом</div>
+		<div class="b-button b-friend-game__button js-invite">Пригласить</div>
+		<div class="b-button b-friend-game__button js-join">Соединиться</div>
+	    <div class="b-button b-friend-game__button js-back">Назад</div>
+	</div>
+</div>
+</fest:template>

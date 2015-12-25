@@ -1,0 +1,17 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+<div class="b-friend-invite">
+	<div class="b-friend-invite__title">Ожидание...</div>
+	<div class="b-friend-invite__subtitle">Комната:</div>
+	<div class="b-friend-invite__room">
+		<fest:if test="json.arg.roomId">
+			<fest:value output="text">
+        		json.arg.roomId      
+        	</fest:value>		
+    	</fest:if>	
+    	<fest:if test="!json.arg.roomId">
+			...		
+    	</fest:if>
+	</div>
+    <div class="b-button b-friend-invite__button js-back">Назад</div>
+</div>
+</fest:template>

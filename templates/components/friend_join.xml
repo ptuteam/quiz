@@ -1,0 +1,9 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+<div class="b-friend-join">
+	<div class="b-friend-join__title">Соединиться</div>
+	<div class="b-friend-join__subtitle">Комната:</div>
+	<input id="input_room" class="b-friend-join__room" type="number" min="0"/>
+	<div class="b-button b-friend-join__button js-join-room">Коннект</div>
+    <div class="b-button b-friend-join__button js-back">Назад</div>
+</div>
+</fest:template>

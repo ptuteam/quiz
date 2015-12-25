@@ -10,7 +10,7 @@ define(['tmpl/components/searching', 'popup'], function(tmpl) {
             return this
         },
         onBackButton: function() {
-            this.trigger('onBackButton');
+            this.trigger('onBackButton', this);
         },
     });
     return view;

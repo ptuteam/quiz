@@ -1,4 +1,4 @@
-define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'models/game/GameManager'], function(app, tmpl, BaseView, Searching, GameManager) {
+define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'views/components/Friend', 'models/game/GameManager'], function(app, tmpl, BaseView, Searching, Friend, GameManager) {
     var View = BaseView.extend({
         template: tmpl,
         loginRequire: true,
@@ -7,36 +7,52 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'mo
             'click .js-friend': 'onFriendGame',
         },
         initialize: function() {
-            this.listenTo(GameManager, 'startGame', this.startGame);
+            this.listenTo(GameManager, 'startGame', this.onStartGame);
         },
-        //Events
+        //Possible modes
         onRandomGame: function() {
+            this.popup = new Searching();
+            this.popup.present();
+
+            this.listenTo(this.popup, 'onBackButton', function() {
+                this.stopSearch();
+                this.disposePopupIfNeeded();
+            });
+
             this.startSearch();
         },
         onFriendGame: function() {
-            //TODO
+            this.popup = new Friend();
+            this.popup.present();
+
+            //searching with parameters
+            this.listenTo(this.popup, 'onInviteButton', this.startSearch);
+            this.listenTo(this.popup, 'onJoinButton', this.startSearch);
+
+            this.listenTo(this.popup, 'onBackButton', this.disposePopupIfNeeded);
+            this.listenTo(this.popup, 'onModeBackButton', this.stopSearch)
         },
         //Searching
-        startSearch: function() {
-            this.searching = new Searching();
-            this.searching.present();
-            
-            this.listenTo(this.searching, 'onBackButton', this.stopSearch);
-            GameManager.searchGame();
+        startSearch: function(context) {
+            GameManager.searchGame(context);
         },
         stopSearch: function() {
-            this.stopListening(this.searching);
-            this.searching.hidePopup();
             GameManager.stopSearch();
         },
         //Transtiton
-        startGame: function(data) {
+        onStartGame: function(data) {
             setTimeout((function(){
-                this.searching.hidePopup(function() {
+                this.popup.hidePopup(function() {
                     app.router.navigateTo('#game');
                 });
-            }).bind(this), this.searching.animationDuration);
-        }
+            }).bind(this), this.popup.animationDuration);
+        },
+        disposePopupIfNeeded: function() {
+            if (this.popup) {
+                this.stopListening(this.popup);
+                this.popup.hidePopup();
+            }
+        },
     });
     return View;
 });

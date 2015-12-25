@@ -1,22 +1,27 @@
 @media only screen and (max-width:800px) {
 	.container {
-		margin: 0px;
-		margin-top: 3vh;
-		width: 100%;
+		margin: 5vh auto;
+		width: 90%;
 		height: 100%;
 		min-width: 0px;
 	}
 
 	.title_large {
 		font-size: 18vh;
+		margin: 10px auto;
+	}
+
+	.b-menu {
+		margin-bottom: 5vh;
 	}
 
 	.b-scores {
 		width: 80%;
 	}
 
-	.b-menu__button {
+	.b-button {
 		width: 80%;
+		font-size: 3vh;
 	}
 
 	.b-gametype__type {
@@ -27,7 +32,7 @@
 		overflow: hidden;
 		width: 90%;
 		margin: auto;
-		margin-top: 3vh;
+		margin-top: 6vh;
 	}
 	/*Game responsive style*/
 	.b-game {
@@ -63,7 +68,7 @@
 
 	/*Finish popup responsive*/
 	.b-finish {
-		padding-bottom: 3vh;
+		padding-bottom: 5vh;
 	}
 
 	.b-finish-avatar__avatar {
@@ -87,7 +92,6 @@
 	.b-finish__button {
 		margin-top: 0px;
 		margin-bottom: 0px;
-		font-size: 3vh;
 	}
 
 	/*Question popup responsive*/
@@ -107,6 +111,7 @@
 		border-radius: 3px;
 		margin-bottom: 1vh;
 		margin-top: 1vh;
-		box-shadow: 0 2px 0 0 #15B358;
+		box-shadow: 0 2px 0 0 #277192;
+		text-shadow: 0px 0px #000;
 	}
 }

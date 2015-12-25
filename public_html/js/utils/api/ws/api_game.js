@@ -10,7 +10,7 @@ define(["app"], function(app) {
         var NEW_PLAYER_CONNECT = 8;
         var ROUND_START = 9;
         var IS_CORRECT_ANSWER = 10;
-        var ROOM_PLAYERS = 11;
+        var INIT_ROOM = 11;
 
 
         return {
@@ -53,8 +53,8 @@ define(["app"], function(app) {
                     case IS_CORRECT_ANSWER: {
                         app.wsEvents.trigger('wsIsCorrectAnswer', data);
                     }
-                    case ROOM_PLAYERS: {
-                        app.wsEvents.trigger("wsRoomPlayers", data);
+                    case INIT_ROOM: {
+                        app.wsEvents.trigger("wsInitRoom", data);
                         break;
                     }
                 }
