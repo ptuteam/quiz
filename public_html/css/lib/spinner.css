@@ -55,3 +55,11 @@
     left: 335px;
     margin-bottom: -50px;
 }
+
+@media only screen and (max-width: 800px) {
+  .spinner_wrapper {
+      top: -185px;
+      left: 85%;  
+    }
+
+}
