@@ -5,7 +5,7 @@ define(['views/components/Spinner', 'tmpl/components/friend_join'], function(Spi
             'click .js-join-room': 'onRoomJoinButton',
             'keypress': function(event) {
                 if (event.keyCode === 13) {
-                    this.onRoomJoin();
+                    this.onRoomJoinButton();
                 }
             },
             'focus .b-friend-join__room': function() {
