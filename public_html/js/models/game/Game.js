@@ -2,6 +2,7 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
     var Model = Backbone.Model.extend({
         player: {},
         opponent: {},
+        questionNumber: 0,
         initialize: function(data) {
             this.player = new Player(data.player);
             this.opponent = new Player(data.opponents[0]);
@@ -32,6 +33,8 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
             this.trigger('roundEnd');
         },
         onNewQuestion: function(data) {
+            this.questionNumber++;
+            data.question.number = this.questionNumber;
             var question = new Question(data.question);
             this.trigger('newQuestion', question);
         },

@@ -1,10 +1,10 @@
 .b-question {
     color: #555;
-    padding: 25px;
+    padding-bottom: 20px;
     font-size: 30px;
     text-align: center;    
     background-image: url("../../img/square_bg.png");
 }
-
+@import "__number/b-question__number";
 @import "__title/b-question__title";
 @import "__answer/b-question__answer";

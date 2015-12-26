@@ -9,6 +9,8 @@ define(['backbone', 'utils/api/ws/api_ws'], function(Backbone, Api) {
         initialize: function(data) {
         	this.title = data.title;
         	this.answers = data.answers;
+            console.log(data);
+            this.number = data.number;
         },
         sendAnswer: function(index, callback) {
         	if (!this.isSent()) {
