@@ -53,6 +53,9 @@ Icon
 quiz-server.jar
 socials.properties
 database.properties
+build.min.js
+style.min.css
+style.css
 
 build-r.js
 style_b.css

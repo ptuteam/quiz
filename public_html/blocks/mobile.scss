@@ -26,6 +26,7 @@
 
 	.b-gametype__type {
 		width: calc(40% - 6px);
+		height: 35vh;
 	}
 
 	.popup__container {
@@ -68,21 +69,23 @@
 
 	/*Finish popup responsive*/
 	.b-finish {
-		padding-bottom: 5vh;
+		padding: 5vh 0;
 	}
 
 	.b-finish-avatar__avatar {
 		margin-bottom: 2vh;
+		height: 20vh;
 	}
 
 	.b-finish__title {
 		margin: 0px;
-		font-size: 40px;
+		margin-bottom: 4vh;
+		font-size: 10vh;
 	}
 
 	.b-finish__username {
 		margin: 0px;
-		font-size: 4vh;
+		font-size: 6vh;
 	}
 
 	.b-finish__score {
@@ -96,7 +99,6 @@
 
 	/*Question popup responsive*/
 	.b-question {
-		padding: 4vh;
 		font-size: 3vh;
 	}
 
@@ -113,5 +115,20 @@
 		margin-top: 1vh;
 		box-shadow: 0 2px 0 0 #277192;
 		text-shadow: 0px 0px #000;
+	}
+	/*Search popup*/
+	.b-search-game__button {
+    	margin-top: 5vh;
+	}
+	.b-search-game__preloader {
+		margin: auto !important;
+		position: static !important;
+	    width: 30vh !important;
+	    height: 30vh !important;
+	    max-width: 150px !important;
+	    max-height: 150px !important;
+	}
+	.b-search-game__title {
+		margin: 0 5vh 5vh;
 	}
 }

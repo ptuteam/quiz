@@ -408,7 +408,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 80%;
     font-size: 3vh; }
   .b-gametype__type {
-    width: calc(40% - 6px); }
+    width: calc(40% - 6px);
+    height: 35vh; }
   .popup__container {
     overflow: hidden;
     width: 90%;
@@ -436,15 +437,17 @@ input[type=number]::-webkit-outer-spin-button {
     display: none; }
   /*Finish popup responsive*/
   .b-finish {
-    padding-bottom: 5vh; }
+    padding: 5vh 0; }
   .b-finish-avatar__avatar {
-    margin-bottom: 2vh; }
+    margin-bottom: 2vh;
+    height: 20vh; }
   .b-finish__title {
     margin: 0px;
-    font-size: 40px; }
+    margin-bottom: 4vh;
+    font-size: 10vh; }
   .b-finish__username {
     margin: 0px;
-    font-size: 4vh; }
+    font-size: 6vh; }
   .b-finish__score {
     margin: 0px; }
   .b-finish__button {
@@ -452,7 +455,6 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 0px; }
   /*Question popup responsive*/
   .b-question {
-    padding: 4vh;
     font-size: 3vh; }
   .b-question__title {
     margin: 20px auto; }
@@ -464,7 +466,19 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 1vh;
     margin-top: 1vh;
     box-shadow: 0 2px 0 0 #277192;
-    text-shadow: 0px 0px #000; } }
+    text-shadow: 0px 0px #000; }
+  /*Search popup*/
+  .b-search-game__button {
+    margin-top: 5vh; }
+  .b-search-game__preloader {
+    margin: auto !important;
+    position: static !important;
+    width: 30vh !important;
+    height: 30vh !important;
+    max-width: 150px !important;
+    max-height: 150px !important; }
+  .b-search-game__title {
+    margin: 0 5vh 5vh; } }
 #loader-wrapper {
     position: fixed;
     top: 0;

@@ -1,4 +1,4 @@
-define(['jquery', 'utils/AuthUtils', 'config'], function($, util, config) {
+define(['jquery', 'utils/AuthUtils'], function($, util) {
     return (function() {
         var USER_GET_URL = '/api/v1/user/get';
         return {
