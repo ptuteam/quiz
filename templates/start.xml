@@ -5,11 +5,10 @@
     	</fest:if>
     </div>
     <div class="container__body">
-    	<div class="b-gametype">
-    		<div class="b-gametype__type js-random">RAND</div>
-        	<div class="b-gametype__type js-friend">FRIEND</div>
-        </div>	
+        <div id= "title-searchtype" class="b-title_small">С кем играть</div>
+        <div id="title-gametype" class="b-title_small">Тип игры</div>
         <div class="b-menu">
+            <div class="b-button b-menu__button js-start">Играть</div>
             <a href="#" class="b-button b-menu__button js-back">Назад</a>
         </div>
     </div>

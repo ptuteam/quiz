@@ -5,9 +5,11 @@ define(['app'], function(app) {
         context: null,
         //View lifecycle
         unload: function() {
+            this.onViewHide();
             this.hide();
         },
         load: function() {
+            this.onViewLoad();
             this.present();
         },
         //Overrides
@@ -27,6 +29,12 @@ define(['app'], function(app) {
         present: function() {
             this.render();
             this.show();
+        },
+        onViewLoad: function() {
+
+        },
+        onViewHide: function() {
+
         }
     });
     return BaseView;

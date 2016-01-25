@@ -1,0 +1,53 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+    <fest:if test="json.app.session.get('loggedIn')">
+        <fest:include context="json.app.session.user" src="../components/user.xml"/>
+    </fest:if>
+    <div class="b-players">
+        <div class="b-player-block">
+            <div class="b-player-block__avatar">
+                <img class="b-player-block__image" src="?"/>
+            </div>
+            <div class="b-player-block__username">
+                Alexandr Chameev
+            </div>
+            <div class="b-player-block__points">10</div>
+        </div>
+        <div class="b-player-block">
+            <div class="b-player-block__avatar">
+                <img class="b-player-block__image" src="?"/>
+            </div>
+            <div class="b-player-block__username opponent-username">
+                Nickola Ucoz
+            </div>
+            <div class="b-player-block__points">5</div>
+        </div>
+    </div>
+    <div class="b-game">
+        <div class="b-map">
+            <div class="b-map__row">
+                <div class="b-map__item b-map__item_enemy">1</div>
+            </div>
+            <div class="b-map__row">
+                <div class="b-map__item">1</div>
+                <div class="b-map__item">1</div>
+            </div>
+            <div class="b-map__row">
+                <div class="b-map__item">2</div>
+                <div class="b-map__item">1</div>
+                <div class="b-map__item">1</div>
+            </div>
+            <div class="b-map__row">
+                <div class="b-map__item">4</div>
+                <div class="b-map__item">5</div>
+                <div class="b-map__item">6</div>
+            </div>
+            <div class="b-map__row">
+                <div class="b-map__item b-map__item_enemy">4</div>
+                <div class="b-map__item b-map__item_enemy">5</div>
+            </div>
+            <div class="b-map__row">
+                <div class="b-map__item b-map__item_enemy">1</div>
+            </div>
+        </div>
+    </div>
+</fest:template>

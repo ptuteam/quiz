@@ -1,13 +1,38 @@
-define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'views/components/Friend', 'models/game/GameManager'], function(app, tmpl, BaseView, Searching, Friend, GameManager) {
+define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'views/components/Friend', 'models/game/GameManager', 'views/components/SegmentControl'], function(app, tmpl, BaseView, Searching, Friend, GameManager, Segment) {
     var View = BaseView.extend({
         template: tmpl,
         loginRequire: true,
         events: {
-            'click .js-random': 'onRandomGame',
-            'click .js-friend': 'onFriendGame',
+            'click .js-start': 'makeSearch'
         },
         initialize: function() {
             this.listenTo(GameManager, 'startGame', this.onStartGame);
+        },
+        onViewLoad: function() {
+            this.modeSegment = new Segment(["СЛУЧАЙНЫЙ", "ДРУГ"]);
+            this.typeSegment = new Segment(["БЛИЦ", "ДОЛГАЯ"]);
+        },
+        onViewHide: function() {
+            this.modeSegment.remove();
+            this.modeSegment = null;
+
+            this.typeSegment.remove();
+            this.typeSegment = null;
+        },
+        render: function() {
+            this.$el.html(this.template({
+                'arg': this.context,
+                'app': app
+            }));
+            $('#title-searchtype').after(this.modeSegment.render().el);
+            $('#title-gametype').after(this.typeSegment.render().el);
+        },
+        makeSearch: function() {
+            if (this.modeSegment.selectedIndex == 0) {
+                this.onRandomGame();
+            } else {
+                this.onFriendGame();
+            }
         },
         //Possible modes
         onRandomGame: function() {
@@ -19,7 +44,7 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'vi
                 this.disposePopupIfNeeded();
             });
 
-            this.startSearch();
+            this.startSearch({});
         },
         onFriendGame: function() {
             this.popup = new Friend();
@@ -34,12 +59,13 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'vi
         },
         //Searching
         startSearch: function(context) {
+            context.gameType = this.typeSegment.selectedIndex;
             GameManager.searchGame(context);
         },
         stopSearch: function() {
             GameManager.stopSearch();
         },
-        //Transtiton
+        //Transition
         onStartGame: function(data) {
             setTimeout((function(){
                 this.popup.hidePopup(function() {
@@ -52,7 +78,7 @@ define(['app', 'tmpl/start', 'views/BaseView', 'views/components/Searching', 'vi
                 this.stopListening(this.popup);
                 this.popup.hidePopup();
             }
-        },
+        }
     });
     return View;
 });

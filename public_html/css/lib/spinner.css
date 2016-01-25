@@ -37,7 +37,7 @@
   -moz-animation: three-quarters-loader 1250ms infinite linear;
   -webkit-animation: three-quarters-loader 1250ms infinite linear;
   animation: three-quarters-loader 1250ms infinite linear;
-  border: 3px solid #28B162;  
+  border: 2px solid #1f8a4c;
   border-right-color: transparent;
   border-radius: 16px;
   box-sizing: border-box;
@@ -53,7 +53,7 @@
     position: relative;
     top: -62px;
     left: 335px;
-    margin-bottom: -50px;
+    margin-bottom: -46px;
 }
 
 @media only screen and (max-width: 800px) {

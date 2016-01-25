@@ -25,3 +25,19 @@
         background-color: #35BF70;
     }
 }
+
+.b-gametype__type_selected {
+    background-color: #ccb138;
+    text-shadow: 1px 2px #b39d28;
+    box-shadow: 0px 5px 0px 0px #b3b03a;
+    &:active {
+        transform: translate(0px, 5px);
+        -webkit-transform: translate(0px, 5px);
+        box-shadow: 0px 1px 0px 0px;
+    }
+    &:hover {
+        background-color: #bfa828;
+    }
+}
+
+

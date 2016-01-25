@@ -1,0 +1,14 @@
+.b-player-block {
+  display: flex;
+  flex: 1 1 50%;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid rgba(221,221,221,.41);
+  padding: 5px;
+  margin: 0 5px;
+}
+
+@import "__avatar/b-player-block__avatar";
+@import "__points/b-player-block__points";
+@import "__username/b-player-block__username";

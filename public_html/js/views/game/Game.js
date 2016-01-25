@@ -1,4 +1,4 @@
-define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views/game/Finish', 'models/game/GameManager', 'jquery-ui'], function(app, tmpl, BaseView, QuestionView, FinishView, GameManager) {
+define(['app', 'tmpl/game/game', 'tmpl/game/game_map', 'views/BaseView', 'views/game/Question', 'views/game/Finish', 'models/game/GameManager', 'jquery-ui'], function(app, tmpl, tmpl2, BaseView, QuestionView, FinishView, GameManager) {
     var View = BaseView.extend({
         template: tmpl,
         gameRequire: true,
@@ -9,6 +9,7 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
         //Game events
         onGameStart: function(game) {
             this.game = game;
+            this.template = game.gameType == 0 ? tmpl : tmpl2;
             this.context = this.game;
             //Events
             this.listenTo(this.game, 'gameFinish', this.onGameFinish);
@@ -41,31 +42,26 @@ define(['app', 'tmpl/game/game', 'views/BaseView', 'views/game/Question', 'views
         },
         disposePopupIfNeeded: function(popup) {
             if (popup) {
+                this.stopListening(popup);
                 popup.hidePopup();
             }
         },
         //View lifecycle
-        load: function() {
-            this.present();
-            $(".container").addClass('container_wide', 500, 'swing');
-        },
-        unload: function() {
-            this.hide();
-            this.onViewUnload();
-            this.trigger('unload');
-            $('.container').removeClass('container_wide', 500, 'swing');
-        },
         onViewUnload: function() {
-            //Stop listening to the game events
-            this.stopListening(this.game);
-            this.stopListening(this.finishView);
-            //Destroy game
             this.game.abort();
             this.game = null;
             //Remove popups
             this.disposePopupIfNeeded(this.questionView);
             this.disposePopupIfNeeded(this.finishView);
             
+        },
+        onViewLoad: function() {
+            $(".container").addClass('container_wide', 500, 'swing');
+        },
+        onViewHide: function() {
+            this.onViewUnload();
+            this.trigger('unload');
+            $('.container').removeClass('container_wide', 500, 'swing');
         }
     });
     return View;

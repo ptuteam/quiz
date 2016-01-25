@@ -1,0 +1,8 @@
+.b-players {
+  display: flex;
+  padding: 10px 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@import "b-player-block/b-player-block";

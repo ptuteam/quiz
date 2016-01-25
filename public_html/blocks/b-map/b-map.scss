@@ -1,0 +1,13 @@
+.b-map {
+  padding: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  margin-top: 0px;
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid rgba(221,221,221,0.41);
+}
+@import "__item/b-map__item";
+@import "__row/b-map__row";

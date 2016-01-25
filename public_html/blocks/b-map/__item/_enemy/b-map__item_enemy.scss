@@ -1,0 +1,13 @@
+.b-map__item_enemy {
+  background-color: #D2655C;
+  text-shadow: 1px 2px #AD534C;
+  box-shadow: 0px 5px 0px 0px #AD534C;
+  &:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+  &:hover {
+    background-color: #d25b55;
+  }
+}

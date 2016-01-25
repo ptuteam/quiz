@@ -1,0 +1,25 @@
+.b-player-block__username {
+  display: inline-block;
+  color: #4F7050;
+  margin-left: 5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  flex: 1 1 100%;
+}
+
+.b-player-block__username::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  padding-top: -5px;
+  margin-left: 7px;
+  background-color: #2DCA70;
+  border-radius: 50%;
+  border: 1px solid #3CB36F;
+}
+
+.opponent-username::after {
+  border: 1px solid #AD534C;
+  background-color: #D2655C;
+}

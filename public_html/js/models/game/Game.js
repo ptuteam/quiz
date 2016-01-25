@@ -3,9 +3,11 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
         player: {},
         opponent: {},
         questionNumber: 0,
+        gameType:0,
         initialize: function(data) {
             this.player = new Player(data.player);
             this.opponent = new Player(data.opponents[0]);
+            this.gameType = data.gameType;
 
             this.listenTo(app.wsEvents, "wsRoundStart", this.onRoundStart);
             this.listenTo(app.wsEvents, "wsRoundEnd", this.onRoundEnd);
