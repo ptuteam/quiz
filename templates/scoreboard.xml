@@ -9,20 +9,21 @@
     	<fest:if test="json.arg.models.length">
 	        <ul class="b-scores">
 	            <fest:for iterate="json.arg.models" index="i">
-	            <li class='b-scores__li'>
-	                <div class="b-scores__score">
-	                    <div class="b-scores__username">
-	                        <fest:value output="text">
-	                        json.arg.models[i].get('first_name') + ' ' + json.arg.models[i].get('last_name');
-	                        </fest:value>
-	                    </div>
-	                    <div class="b-scores__points">
-	                        <fest:value output="text">
-	                        json.arg.models[i].get('score');
-	                        </fest:value>
-	                    </div>
-	                </div>
-	            </li>
+				<div class="b-player-block b-player-block_score">
+					<div class="b-player-block__avatar">
+						<img class="b-player-block__image" src="{json.arg.models[i].get('avatar')}"/>
+					</div>
+					<div class="b-player-block__username">
+						<fest:value output="text">
+							json.arg.models[i].get('first_name') + ' ' + json.arg.models[i].get('last_name');
+						</fest:value>
+					</div>
+					<div class="b-player-block__points">
+						<fest:value output="text">
+							json.arg.models[i].get('score');
+						</fest:value>
+					</div>
+				</div>
 	            </fest:for>
 	        </ul>
         </fest:if>

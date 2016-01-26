@@ -7,6 +7,14 @@
   flex: 1 1 100%;
 }
 
+.b-player-block_score > .b-player-block__username::after {
+  display: none;
+}
+
+.b-player-block_score > .b-player-block__username {
+  margin-left: 10px;
+}
+
 .b-player-block__username::after {
   content: "";
   display: inline-block;

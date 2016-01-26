@@ -1,8 +1,10 @@
 .b-scores {
-	list-style-type: none;
-    margin: auto;
-    padding: 5px 15px 5px;
-    width: 55%;
+  list-style-type: none;
+  margin: auto;
+  width: calc(55% + 24px);
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding: 0px;
 }
 
 @import "__username/b-scores__username";

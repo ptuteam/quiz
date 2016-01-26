@@ -9,6 +9,16 @@
   margin: 0 5px;
 }
 
+.b-player-block_score {
+  background-color: rgba(0,0,0,0);
+  border: 0px;
+  margin: 5px 0px;
+  border-bottom: 1px dashed rgba(122, 169, 124, 0.87)
+}
+
+.b-player-block_score:last-child {
+  border-bottom: none;
+}
 @import "__avatar/b-player-block__avatar";
 @import "__points/b-player-block__points";
 @import "__username/b-player-block__username";

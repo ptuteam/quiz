@@ -28,7 +28,7 @@ body {
     background-color: #3AC876; }
 
 .b-menu {
-  margin-bottom: 50px; }
+  margin-bottom: 40px; }
 
 .b-game {
   text-align: center; }
@@ -104,8 +104,10 @@ body {
 .b-scores {
   list-style-type: none;
   margin: auto;
-  padding: 5px 15px 5px;
-  width: 55%; }
+  width: calc(55% + 24px);
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding: 0px; }
 
 .b-scores__username {
   display: inline-block;
@@ -210,7 +212,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 35px 25px 35px 25px;
   color: #555;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 35px;
   text-transform: uppercase;
   text-align: center; }
 
@@ -225,7 +227,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 30px; }
 
 .title_large {
-  font-size: 120px;
+  font-size: 100px;
   color: #777;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -333,6 +335,15 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 5px;
   margin: 0 5px; }
 
+.b-player-block_score {
+  background-color: transparent;
+  border: 0px;
+  margin: 5px 0px;
+  border-bottom: 1px dashed rgba(122, 169, 124, 0.87); }
+
+.b-player-block_score:last-child {
+  border-bottom: none; }
+
 .b-player-block__avatar {
   flex: 0 0 45px; }
 
@@ -356,6 +367,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 400;
   text-transform: uppercase;
   flex: 1 1 100%; }
+
+.b-player-block_score > .b-player-block__username::after {
+  display: none; }
+
+.b-player-block_score > .b-player-block__username {
+  margin-left: 10px; }
 
 .b-player-block__username::after {
   content: "";
