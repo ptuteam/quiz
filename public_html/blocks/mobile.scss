@@ -21,6 +21,7 @@
 
 	.b-button {
 		width: 80%;
+        box-sizing: border-box;
 		font-size: 3vh;
 	}
 
@@ -30,10 +31,12 @@
 	}
 
 	.b-wrapper__segment {
-		width: calc(40% - 6px);;
+		width: calc(40% - 6px);
+        box-sizing: border-box;
+        font-size: 17px;
 	}
 
-	.b-player-block__username {
+	.b-player-block_score > .b-player-block__username {
 		margin-left: 3px;
 		font-size: 12px;
 	}
@@ -87,24 +90,31 @@
 	}
 
 	.b-finish__title {
-		margin: 0px;
-		margin-bottom: 4vh;
-		font-size: 10vh;
+      margin: 0;
+      margin-bottom: 2vh;
+      font-size: 7vh;
 	}
 
 	.b-finish__username {
-		margin: 0px;
-		font-size: 6vh;
+      margin: 2vh 0;
+      font-size: 4vh;
 	}
 
 	.b-finish__score {
-		margin: 0px;
+      margin: 2vh 0;
 	}
 
 	.b-finish__button {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
+
+    .b-finish-avatar__avatar {
+      margin: 2vh auto;
+      box-sizing: border-box;
+      height: auto;
+    }
+
 
 	/*Question popup responsive*/
 	.b-question {
@@ -122,9 +132,15 @@
 		border-radius: 3px;
 		margin-bottom: 1vh;
 		margin-top: 1vh;
-		box-shadow: 0 2px 0 0 #277192;
+		box-shadow: 0 2px 0 0 #139220;
 		text-shadow: 0px 0px #000;
 	}
+
+    .b-question__number {
+      height: 35px;
+      line-height:35px;
+      font-size: 12px;
+    }
 	/*Search popup*/
 	.b-search-game__button {
     	margin-top: 5vh;
