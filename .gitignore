@@ -127,6 +127,6 @@ Temporary Items
 ### jspm ###
 jspm_packages
 cfg/
-.jar
+*.jar
 public_html/css/build/
 public_html/js/build/

@@ -29,6 +29,15 @@
 		height: 35vh;
 	}
 
+	.b-wrapper__segment {
+		width: calc(40% - 6px);;
+	}
+
+	.b-player-block__username {
+		margin-left: 3px;
+		font-size: 12px;
+	}
+
 	.popup__container {
 		overflow: hidden;
 		width: 90%;
