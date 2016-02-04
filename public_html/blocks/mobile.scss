@@ -42,8 +42,6 @@
 	}
 
 	.popup__container {
-		overflow: hidden;
-		width: 90%;
 		margin: auto;
 		margin-top: 6vh;
 	}
@@ -142,6 +140,9 @@
       font-size: 12px;
     }
 	/*Search popup*/
+	.b-search-game {
+		width: 90vw;
+	}
 	.b-search-game__button {
     	margin-top: 5vh;
 	}
@@ -155,5 +156,8 @@
 	}
 	.b-search-game__title {
 		margin: 0 5vh 5vh;
+	}
+	.b-friend-game {
+		width: 90vw;
 	}
 }

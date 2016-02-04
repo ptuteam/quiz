@@ -1,5 +1,15 @@
 .b-question__answer {
-	
+  flex: 0 1 calc(90% - 20px);
+  font-size: 15px;
+  padding: 15px;
+  margin: 3px;
+  background-color: rgba(166, 166, 166, 0.06);
+  &:hover {
+    background-color: rgba(166, 166, 166, 0.1);
+  }
+  &:active {
+
+  }
 }
 
 @import "_chosen/answer_chosen";

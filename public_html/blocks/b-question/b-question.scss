@@ -1,10 +1,14 @@
 .b-question {
-    color: #555;
-    padding-bottom: 20px;
-    font-size: 30px;
-    text-align: center;    
-    background-image: url("../../img/square_bg.png");
+    color: #777;
+    padding-bottom: 10px;
+    background: #F1F1F1;
+    font-size: 20px;
+    text-align: center;
+    width: 60vw;
 }
 @import "__number/b-question__number";
 @import "__title/b-question__title";
 @import "__answer/b-question__answer";
+@import "__answers/b-question__answers";
+@import "__timer/b-question__timer";
+@import "__body/b-question__body";

@@ -4,10 +4,17 @@
 	<div class="b-question__title">
 		<fest:value output="text">json.title</fest:value>
 	</div>
-	<fest:for iterate="json.answers" index="i">
-		<div class="b-button b-question__answer js-send">
-			<fest:value output="text">json.answers[i]</fest:value>
-		</div>
-	</fest:for>
+    <div class="b-question__body">
+        <div class="b-question__timer">
+            <div id="question-timer" class="b-question__time"><fest:value output="text">'00:0'+json.time</fest:value></div>
+        </div>
+        <div class="b-question__answers">
+            <fest:for iterate="json.answers" index="i">
+                <div class="b-question__answer js-send">
+                    <fest:value output="text">json.answers[i]</fest:value>
+                </div>
+            </fest:for>
+        </div>
+    </div>
 </div>
 </fest:template>

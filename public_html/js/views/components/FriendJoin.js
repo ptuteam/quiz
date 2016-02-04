@@ -32,7 +32,7 @@ define(['backbone', 'views/components/Spinner', 'tmpl/components/friend_join'], 
         validate: function(input) {
             input.setAttribute('type', 'number');
             input.setAttribute('min', '0');
-            if (input.checkValidity() && input.value.lenght != 0) {
+            if (input.checkValidity() && input.value.length != 0) {
                 $(input).removeClass('room_invalid');
                 return true;
             } else {

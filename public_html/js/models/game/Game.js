@@ -14,6 +14,8 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
             this.listenTo(app.wsEvents, "wsNewQuestion", this.onNewQuestion);
             this.listenTo(app.wsEvents, 'wsGameFinished', this.onGameFinish);
             this.listenTo(app.wsEvents, "wsPlayerDisconnected", this.onPlayerDisconnected);
+            this.listenTo(app.wsEvents, "wsAnswerResults", this.onAnswerResults);
+            this.listenTo(app.wsEvents, "wsNewScores", this.onNewScores);
         },
         update: function(data) {
             this.player.update(data.player);
@@ -27,18 +29,24 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
         onPlayerDisconnected: function() {
             this.trigger('playerDisconnected');
         },
-        onRoundStart: function(data) {
+        onRoundStart: function() {
             this.trigger('roundStart');
         },
-        onRoundEnd: function(data) {
-            this.update(data);
+        onRoundEnd: function() {
             this.trigger('roundEnd');
+        },
+        onNewScores: function(data) {
+            this.update(data);
+            this.trigger('newScores');
         },
         onNewQuestion: function(data) {
             this.questionNumber++;
             data.question.number = this.questionNumber;
             var question = new Question(data.question);
             this.trigger('newQuestion', question);
+        },
+        onAnswerResults: function(data) {
+            this.trigger('answerResults', data);
         },
         abort: function() {
             this.stopListening();

@@ -21,6 +21,7 @@ Backbone.Popup = Backbone.View.extend({
             if (typeof callback === 'function' && callback) {
                 callback();
             };
+            this.onHide();
         }).bind(this), this.animationDuration);
     },
     ensureModalContainer: function() {
@@ -31,5 +32,8 @@ Backbone.Popup = Backbone.View.extend({
     present: function() {
         this.render();
         this.showPopup();
+    },
+    onHide: function() {
+
     }
 });

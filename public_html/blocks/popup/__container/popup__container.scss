@@ -11,11 +11,10 @@
 }
 
 .popup__container {
+  display: table;
   overflow: hidden;
   position: relative;
-  width: 90%;
-  max-width: 500px;
-  margin: 100px auto;
+  margin: 10vh auto;
   background: #FFF;
   border-radius: 3px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -24,7 +23,4 @@
   @include trans_prop(transform);
   -webkit-backface-visibility: hidden;
 }
-
-@import "_large/popup__container_large";
-
 

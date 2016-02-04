@@ -50,16 +50,13 @@
 }
 
 .spinner_wrapper {
-    position: relative;
-    top: -62px;
-    left: 335px;
-    margin-bottom: -46px;
+    position: absolute;
+    right: 26%;
+    top: 111px;
 }
 
 @media only screen and (max-width: 800px) {
   .spinner_wrapper {
-      top: -185px;
-      left: 85%;  
     }
 
 }

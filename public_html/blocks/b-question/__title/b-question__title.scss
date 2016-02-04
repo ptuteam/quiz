@@ -1,5 +1,10 @@
 .b-question__title {
-	margin: 25px 0px 45px 0px;
-	padding-left: 20px;
-	padding-right: 20px;
+	box-sizing: border-box;
+	font-size: 17px;;
+	padding: 15px;
+	margin: 12px;
+	margin-bottom: 7px;
+	background-color: #fff;
+	border: 1px dashed #eee;
+	box-shadow: 0 0 0 4px #ffffff, 1px 5px 6px rgba(0,0,0,.1);
 }

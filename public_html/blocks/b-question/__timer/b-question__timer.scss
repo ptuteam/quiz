@@ -1,0 +1,23 @@
+.b-question__timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 100px;
+  margin: 5px -3px 5px 12px;
+  background-color: white;
+  border: 1px dashed #eee;
+  box-shadow: 0 0 0 4px #fff,1px 5px 6px rgba(0,0,0,.1);
+  box-sizing: border-box;
+}
+
+$circle_size: 80px;
+.b-question__time {
+  background-color: rgba(46, 204, 113, 0.82);
+  border-radius: 50%;
+  height: $circle_size;
+  width: $circle_size;
+  line-height: $circle_size;
+  color: white;
+  font-size: 19px;
+  text-shadow: 1px 2px rgba(32, 146, 46, 0.48);
+}

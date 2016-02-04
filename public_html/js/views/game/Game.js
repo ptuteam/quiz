@@ -16,25 +16,32 @@ define(['app', 'tmpl/game/game', 'tmpl/game/game_map', 'views/BaseView', 'views/
             this.listenTo(this.game, 'newQuestion', this.onNewQuestion);
             this.listenTo(this.game, 'roundStart', this.onRoundStart);
             this.listenTo(this.game, 'roundEnd', this.onRoundEnd);
-            this.listenTo(this.game, 'playerDisconnected', this.onPlayerDisconnected)
-        },
-        onGameFinish: function(winner) {
-            this.finishView = new FinishView(winner);
-            this.finishView.present();
-            this.listenTo(this.finishView, 'onReturn', this.onReturnClick);
+            this.listenTo(this.game, 'playerDisconnected', this.onPlayerDisconnected);
+            this.listenTo(this.game, 'answerResults', this.onAnswerResults);
+            this.listenTo(this.game, 'newScores', this.onNewScores);
         },
         onRoundStart: function() {
         },
-        onRoundEnd: function(data) {
-            this.disposePopupIfNeeded(this.questionView);
-            this.render();
+        onNewScores: function() {
+          this.render();
         },
         onNewQuestion: function(data) {
             this.questionView = new QuestionView(data);
             this.questionView.present();
         },
+        onAnswerResults: function(data) {
+            this.questionView.setResults(data);
+        },
+        onRoundEnd: function(data) {
+            this.disposePopupIfNeeded(this.questionView);
+        },
         onPlayerDisconnected: function() {
             this.disposePopupIfNeeded(this.questionView);
+        },
+        onGameFinish: function(winner) {
+            this.finishView = new FinishView(winner);
+            this.finishView.present();
+            this.listenTo(this.finishView, 'onReturn', this.onReturnClick);
         },
         //Popup functions
         onReturnClick: function() {

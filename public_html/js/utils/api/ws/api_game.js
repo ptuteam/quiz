@@ -1,7 +1,7 @@
 define(["app"], function(app) {
     return (function() {
         var GAME_START = 1;
-        var ROUND_END = 2;
+        var NEW_SCORES = 2;
         var GAME_FINISHED =3;
         var PLAYER_DISCONNECTED = 4;
         var NEW_QUESTION = 5;
@@ -9,9 +9,9 @@ define(["app"], function(app) {
         var TOO_MANY_ROOMS = 7;
         var NEW_PLAYER_CONNECT = 8;
         var ROUND_START = 9;
-        var IS_CORRECT_ANSWER = 10;
+        var ANSWER_RESULTS = 10;
         var INIT_ROOM = 11;
-
+        var ROUND_END = 17;
 
         return {
             ANSWER_CODE: ANSWER,
@@ -22,8 +22,8 @@ define(["app"], function(app) {
                         app.wsEvents.trigger("wsGameStart", data);
                         break;
                     }
-                    case ROUND_END: {
-                        app.wsEvents.trigger("wsRoundEnd", data);
+                    case NEW_SCORES: {
+                        app.wsEvents.trigger("wsNewScores", data);
                         break;
                     }
                     case GAME_FINISHED: {
@@ -50,11 +50,16 @@ define(["app"], function(app) {
                         app.wsEvents.trigger("wsRoundStart", data);
                         break;
                     }
-                    case IS_CORRECT_ANSWER: {
-                        app.wsEvents.trigger('wsIsCorrectAnswer', data);
+                    case ANSWER_RESULTS: {
+                        app.wsEvents.trigger('wsAnswerResults', data);
+                        break;
                     }
                     case INIT_ROOM: {
                         app.wsEvents.trigger("wsInitRoom", data);
+                        break;
+                    }
+                    case ROUND_END: {
+                        app.wsEvents.trigger("wsRoundEnd", data);
                         break;
                     }
                 }

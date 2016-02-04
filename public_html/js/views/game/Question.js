@@ -1,4 +1,4 @@
-define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Question) {
+define(['tmpl/game/question', 'models/game/Question', 'views/components/Timer', 'popup'], function(tmpl, Question, Timer) {
     var view = Backbone.Popup.extend({
         className: 'popup__container popup__container_large',
         events: {
@@ -6,6 +6,7 @@ define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Q
         },
         initialize: function(data) {
             this.question = new Question(data);
+            Timer.start(this.question.time);
         },
         render: function() {
             this.$el.html(tmpl(this.question));
@@ -15,9 +16,13 @@ define(['tmpl/game/question', 'models/game/Question', 'popup'], function(tmpl, Q
                 $(event.target).addClass('answer_chosen');
             });
         },
-        onCorrectAnswer: function(data) {
-            this.question.set('answeredCorrectly', data.correct);
+        setResults: function(data) {
+            var index = this.question.answers.indexOf(data.correct);
+            $('.js-send').addClass("unclickable").eq(index).addClass("answer_correct");
         },
+        onHide: function() {
+            Timer.stop();
+        }
     });
     return view;
 });

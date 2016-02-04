@@ -1,0 +1,12 @@
+.b-question__answers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 5px 13px 5px 15px;
+  background-color: #fff;
+  border: 1px dashed #eee;
+  box-shadow: 0 0 0 4px #fff,1px 5px 4px rgba(0,0,0,.1);
+  box-sizing: border-box;
+  padding: 5px;
+}
