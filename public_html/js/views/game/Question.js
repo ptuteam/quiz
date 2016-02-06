@@ -21,6 +21,7 @@ define(['tmpl/game/question', 'models/game/Question', 'views/components/Timer', 
             $('.js-send').addClass("unclickable").eq(index).addClass("answer_correct");
         },
         onHide: function() {
+            console.log('call');
             Timer.stop();
         }
     });

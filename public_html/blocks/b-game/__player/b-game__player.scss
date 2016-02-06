@@ -1,10 +1,16 @@
 .b-game__player {
-	width: 50%;
-    display: inline-block;
-    background-color: #E0FFE8;
-    vertical-align: bottom;
+  display: flex;
+  justify-content: flex-start;
+  flex: 1 1 calc(100%);
+  background-color: #fff;
+  box-shadow: 0 0 0 0px #fff, 1px 2px 1px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.b-game__player:last-child {
+  margin-bottom: 0px;
 }
 
 .b-game__player_opponent {
-	background-color: #fff9ef;
 }

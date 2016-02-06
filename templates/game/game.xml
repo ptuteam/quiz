@@ -5,11 +5,6 @@
 
 	<div class="b-game">
 		<div class="b-game__player">
-			<div class="b-player__score">
-					<fest:value output="text">
-	        			json.arg.player.score    
-	        		</fest:value>
-			</div>
 			<div class="b-player">
        			<div class="b-player__avatar">
        				<img class="b-player__image" src="{json.arg.player.get('avatar')}"/>
@@ -20,13 +15,20 @@
 	        		</fest:value>
 	       		</div>
 			</div>
+			<div class="b-status">
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+			</div>
+			<div class="b-game__score">
+				<fest:value output="text">
+					json.arg.player.score
+				</fest:value>
+			</div>
 		</div>
 		<div class="b-game__player b-game__player_opponent">
-			<div class="b-player__score score_opponent">
-					<fest:value output="text">
-	        			json.arg.opponent.score   
-	        		</fest:value>
-			</div>
 			<div class="b-player b-player_opponent">
 				<div class="b-player__avatar b-player__avatar_opponent">
 					<img class="b-player__image b-player__image_opponent" src="{json.arg.opponent.get('avatar')}"/>
@@ -37,7 +39,18 @@
 	        		</fest:value>
 	        	</div>
 			</div>
+			<div class="b-status">
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+				<div class="b-status__round"></div>
+			</div>
+			<div class="b-game__score score_opponent">
+				<fest:value output="text">
+					json.arg.opponent.score
+				</fest:value>
+			</div>
 		</div>
-		<div class="versus-block">VS</div>
 	</div>
 </fest:template>

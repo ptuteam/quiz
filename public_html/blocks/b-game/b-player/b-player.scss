@@ -1,7 +1,8 @@
 .b-player {
-	margin: auto;
-    width: 50%;
-    box-sizing: border-box;
+  padding: 15px;
+  flex: 0 0 20%;
+  background-color: rgba(166,166,166,0.01);
+  border-right: 1px solid rgba(204, 204, 204, 0.51);
 }
 
 @import "__avatar/b-player__avatar";
