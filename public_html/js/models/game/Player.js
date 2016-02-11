@@ -5,7 +5,8 @@ define(['backbone'], function(Backbone) {
             lastname: "",
             email: "",
             avatar: "",
-            score: "0"
+            score: "0",
+            playerID: 0,
         },
         initialize: function(data) {
             this.name = data.first_name;
@@ -13,6 +14,7 @@ define(['backbone'], function(Backbone) {
             this.email = data.email;
             this.avatar = data.avatar;
             this.score = data.score;
+            this.playerID = data.playerID;
         },
         update: function(data) {
             this.score = data.score

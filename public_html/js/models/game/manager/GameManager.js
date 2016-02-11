@@ -1,7 +1,6 @@
-define(['app', 'models/game/Game', 'utils/api/ws/api_ws'], function(app, Game, api) {
+define(['app', 'models/game/BlitzGame', 'models/game/MapGame', 'utils/api/ws/api_ws'], function(app, BlitzGame, MapGame, api) {
     var Manager = Backbone.Model.extend({
         game: {},
-        gameType: 0,
         initialize: function() {
             this.listenTo(app.wsEvents, 'wsInitRoom', this.onInitRoom);
             this.listenTo(app.wsEvents, 'wsGameStart', this.startGame);
@@ -13,7 +12,6 @@ define(['app', 'models/game/Game', 'utils/api/ws/api_ws'], function(app, Game, a
         },
         searchGame: function(context) {
             if (!api.isOpen()) {
-                this.gameType = context.gameType;
                 api.startConnection(context);
             }
         },
@@ -21,16 +19,20 @@ define(['app', 'models/game/Game', 'utils/api/ws/api_ws'], function(app, Game, a
             api.closeConnection()
         },
         startGame: function(data) {
-            data.gameType = this.gameType;
-            this.game = new Game(data);
+            if (data.mode === 'BLITZ') {
+                this.game = new BlitzGame(data);
+                this.trigger('startBlitzGame', this.game);
+            } else {
+                this.game = new MapGame(data);
+                this.trigger('startMapGame', this.game);
+            }
             this.listenTo(this.game, 'gameAborted', this.stopGame);
-            this.trigger('startGame', this.game);
         },
         stopGame: function() {
             api.closeConnection();
             this.stopListening(this.game);
             this.game = null;
-        }
+        },
     });
     return new Manager();
 });

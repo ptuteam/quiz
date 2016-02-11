@@ -2,7 +2,7 @@ define(['app'], function(app) {
     var BaseView = Backbone.View.extend({
         loginRequire: false,
         gameRequire: false,
-        context: null,
+        context: {},
         //View lifecycle
         unload: function() {
             this.onViewHide();
@@ -35,7 +35,13 @@ define(['app'], function(app) {
         },
         onViewHide: function() {
 
-        }
+        },
+        disposePopupIfNeeded: function(popup) {
+            if (popup) {
+                this.stopListening(popup);
+                popup.hidePopup();
+            }
+        },
     });
     return BaseView;
 });

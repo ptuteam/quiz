@@ -1,4 +1,4 @@
-define(['models/game/GameManager', 'tmpl/components/friend_invite'], function(GameManager, tmpl) {
+define(['../../../models/game/manager/GameManager', 'tmpl/components/friend_invite'], function(GameManager, tmpl) {
     var view = Backbone.View.extend({
         events: {
             'click .js-back': 'onBackButton',

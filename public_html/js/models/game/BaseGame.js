@@ -5,9 +5,13 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
         questionNumber: 0,
         gameType:0,
         initialize: function(data) {
+            data.player.playerID = 0;
+            data.opponents[0].playerID = 1;
+
             this.player = new Player(data.player);
             this.opponent = new Player(data.opponents[0]);
-            this.gameType = data.gameType;
+
+            this.mode = data.mode === "BLITZ" ? 0 : 1;
 
             this.listenTo(app.wsEvents, "wsRoundStart", this.onRoundStart);
             this.listenTo(app.wsEvents, "wsRoundEnd", this.onRoundEnd);
@@ -52,6 +56,9 @@ define(['app', 'models/game/Player', 'models/game/Question'], function(app, Play
             this.stopListening();
             this.trigger('gameAborted');
             return this;
+        },
+        getPlayers: function() {
+          return [this.player, this.opponent];
         }
     });
     return Model;

@@ -1,16 +1,14 @@
-define(['app', 'tmpl/game/game', 'tmpl/game/game_map', 'views/BaseView', 'views/game/Question', 'views/game/Finish', 'models/game/GameManager', 'jquery-ui'], function(app, tmpl, tmpl2, BaseView, QuestionView, FinishView, GameManager) {
+define(['app', 'tmpl/game/game', 'tmpl/game/game_map', 'views/BaseView', 'views/game/popup/QuestionPopup', 'views/game/popup/FinishPopup', 'models/game/manager/GameManager', 'jquery-ui'], function(app, tmpl, tmpl2, BaseView, QuestionView, FinishView, GameManager) {
     var View = BaseView.extend({
         template: tmpl,
         gameRequire: true,
         loginRequire: true,
         initialize: function() {
-            this.listenTo(GameManager, 'startGame', this.onGameStart);
         },
         //Game events
         onGameStart: function(game) {
             this.game = game;
-            this.template = game.gameType == 0 ? tmpl : tmpl2;
-            this.context = this.game;
+            this.context.game = game;
             //Events
             this.listenTo(this.game, 'gameFinish', this.onGameFinish);
             this.listenTo(this.game, 'newQuestion', this.onNewQuestion);
@@ -47,14 +45,9 @@ define(['app', 'tmpl/game/game', 'tmpl/game/game_map', 'views/BaseView', 'views/
         onReturnClick: function() {
             app.router.navigateToMain();
         },
-        disposePopupIfNeeded: function(popup) {
-            if (popup) {
-                this.stopListening(popup);
-                popup.hidePopup();
-            }
-        },
         //View lifecycle
         onViewUnload: function() {
+            this.stopListening(this.game);
             this.game.abort();
             this.game = null;
             //Remove popups

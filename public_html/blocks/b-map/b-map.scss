@@ -3,10 +3,9 @@
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  margin: 10px;
-  margin-top: 0px;
   background-color: #eee;
   border-radius: 3px;
+  flex: 1 1 100%;
   border: 1px solid rgba(221,221,221,0.41);
 }
 @import "__item/b-map__item";

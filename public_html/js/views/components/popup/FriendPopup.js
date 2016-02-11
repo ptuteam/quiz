@@ -1,9 +1,12 @@
-define(['views/components/FriendInvite', 'views/components/FriendJoin', 'tmpl/components/friend', 'popup'], function(FriendInvite, FriendJoin, tmpl) {
+define(['views/components/popup/FriendInvitePopup', 'views/components/popup/FriendJoinPopup', 'tmpl/components/friend', 'popup'], function(FriendInvite, FriendJoin, tmpl) {
     var view = Backbone.Popup.extend({
         events: {
             'click .js-back': 'onBackButton',
             'click .js-invite': 'onInviteButton',
             'click .js-join': 'onJoinButton',
+        },
+        initialize: function(options) {
+          this.mode = options.mode;
         },
         render: function() {
             this.$el.html(tmpl());
@@ -21,7 +24,7 @@ define(['views/components/FriendInvite', 'views/components/FriendJoin', 'tmpl/co
             var view = new FriendInvite();
             this.listenTo(view, "onBackButton", this.onModeBackButton);
             
-            this.trigger('onJoinButton', {'type': 1});
+            this.trigger('onJoinButton', {'type': 1, mode: this.mode});
 
             this.replaceMain(view);
         },
@@ -31,7 +34,7 @@ define(['views/components/FriendInvite', 'views/components/FriendJoin', 'tmpl/co
             this.listenTo(view, "onInputFocus", this.onInputFocus);
 
             this.listenTo(view, "onRoomJoinButton", function(roomId) {
-                this.trigger('onJoinButton', {'type': 2, 'roomId': roomId});
+                this.trigger('onJoinButton', {'type': 2, 'roomId': roomId, mode: this.mode});
             });
 
             this.replaceMain(view);

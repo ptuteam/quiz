@@ -1,4 +1,4 @@
-define(['tmpl/components/searching', 'popup'], function(tmpl) {
+define(['../../../tmpl/components/searching', 'popup'], function(tmpl) {
     var view = Backbone.Popup.extend({
         events: {
             'click .js-back': 'onBackButton'

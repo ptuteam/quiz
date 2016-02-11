@@ -12,6 +12,8 @@ define(["app"], function(app) {
         var ANSWER_RESULTS = 10;
         var INIT_ROOM = 11;
         var ROUND_END = 17;
+        var PLAYER_TURN_START = 12;
+        var PLAYER_TURN_FINISH = 16;
 
         return {
             ANSWER_CODE: ANSWER,
@@ -60,6 +62,14 @@ define(["app"], function(app) {
                     }
                     case ROUND_END: {
                         app.wsEvents.trigger("wsRoundEnd", data);
+                        break;
+                    }
+                    case PLAYER_TURN_START: {
+                        app.wsEvents.trigger("wsPlayerTurnStart", data);
+                        break;
+                    }
+                    case PLAYER_TURN_FINISH: {
+                        app.wsEvents.trigger("wsPlayerTurnFinish", data);
                         break;
                     }
                 }

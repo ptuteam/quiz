@@ -1,4 +1,4 @@
-define(['tmpl/game/question', 'models/game/Question', 'views/components/Timer', 'popup'], function(tmpl, Question, Timer) {
+define(['../../../tmpl/game/question', 'models/game/Question', 'views/components/Timer', 'popup'], function(tmpl, Question, Timer) {
     var view = Backbone.Popup.extend({
         className: 'popup__container popup__container_large',
         events: {

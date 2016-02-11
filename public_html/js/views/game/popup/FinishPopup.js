@@ -1,4 +1,4 @@
-define(['tmpl/game/finish', 'popup'], function(tmpl) {
+define(['../../../tmpl/game/finish', 'popup'], function(tmpl) {
     var view = Backbone.Popup.extend({
         events: {
             'click .js-return': 'onReturn',

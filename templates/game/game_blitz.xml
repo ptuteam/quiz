@@ -1,0 +1,52 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name='json'>
+    <div class="b-game">
+        <div class="b-game__player">
+            <div class="b-player">
+                <div class="b-player__avatar">
+                    <img class="b-player__image" src="{json.player.get('avatar')}"/>
+                </div>
+                <div class="b-player__username">
+                    <fest:value output="text">
+                        json.player.name
+                    </fest:value>
+                </div>
+            </div>
+            <div class="b-status">
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+            </div>
+            <div class="b-game__score">
+                <fest:value output="text">
+                    json.player.score
+                </fest:value>
+            </div>
+        </div>
+        <div class="b-game__player b-game__player_opponent">
+            <div class="b-player b-player_opponent">
+                <div class="b-player__avatar b-player__avatar_opponent">
+                    <img class="b-player__image b-player__image_opponent" src="{json.opponent.get('avatar')}"/>
+                </div>
+                <div class="b-player__username b-player__username_opponent">
+                    <fest:value output="text">
+                        json.opponent.name
+                    </fest:value>
+                </div>
+            </div>
+            <div class="b-status">
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+                <div class="b-status__round"></div>
+            </div>
+            <div class="b-game__score score_opponent">
+                <fest:value output="text">
+                    json.opponent.score
+                </fest:value>
+            </div>
+        </div>
+    </div>
+</fest:template>

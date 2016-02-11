@@ -1,4 +1,4 @@
-define(['backbone', 'views/components/Spinner', 'tmpl/components/friend_join'], function(Backbone, Spinner, tmpl) {
+define(['backbone', '../loader/Spinner', 'tmpl/components/friend_join'], function(Backbone, Spinner, tmpl) {
     var view = Backbone.View.extend({
         events: {
             'click .js-back': 'onBackButton',

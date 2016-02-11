@@ -1,22 +1,11 @@
 define(["app", "utils/api/ws/api_game"], function(app, api_game) {
     return (function() {
         var BASE_URL =  'ws://' + location.host + '/gameplay';
-        var RANDOM_GAME = 0;
-        var INVITE_FRIEND_GAME = 1;
-        var JOIN_FRIEND_GAME = 2;
-        
+
         return {
             currentApi: null,
             startConnection: function(context) {
-                var url = BASE_URL;
-
-                if (context) {
-                    if (context.type == INVITE_FRIEND_GAME) {
-                        url = url + '?type=' + context.type;
-                    } else if (context.type == JOIN_FRIEND_GAME) {
-                        url = url + '?roomId=' + context.roomId; 
-                    }
-                }
+                var url = this.buildURL(context, url);
 
             	var webSocket = new WebSocket(url);
             	this.socket = webSocket;
@@ -61,6 +50,32 @@ define(["app", "utils/api/ws/api_game"], function(app, api_game) {
             },
             isOpen: function() {
                 return (this.socket != null);
+            },
+            buildURL: function(context) {
+                var url = BASE_URL;
+                var RANDOM_GAME  = 0;
+                var INVITE_FRIEND_GAME = 1;
+                var JOIN_FRIEND_GAME = 2;
+                var BLITZ_GAME = 0;
+                var MAP_GAME = 1;
+
+                if (context) {
+                    if (context.type == INVITE_FRIEND_GAME) {
+                        url = url + '?type=' + context.type;
+                    } else if (context.type == JOIN_FRIEND_GAME) {
+                        url = url + '?type=' + context.type;
+                        url = url + '&roomId=' + context.roomId;
+                    } else {
+                        url = url + '?type=' + RANDOM_GAME;
+                    }
+                    if (context.mode == BLITZ_GAME) {
+                        url = url + '&mode=BLITZ'
+                    } else if (context.mode == MAP_GAME) {
+                        url = url + '&mode=MAPGAME'
+                    }
+                }
+
+                return url;
             }
         }
     })();

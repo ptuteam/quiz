@@ -2,55 +2,10 @@
 	<fest:if test="json.app.session.get('loggedIn')">
 		<fest:include context="json.app.session.user" src="../components/user.xml"/>
 	</fest:if>
-
-	<div class="b-game">
-		<div class="b-game__player">
-			<div class="b-player">
-       			<div class="b-player__avatar">
-       				<img class="b-player__image" src="{json.arg.player.get('avatar')}"/>
-       			</div>
-       			<div class="b-player__username">
-					<fest:value output="text">
-	        			json.arg.player.name    
-	        		</fest:value>
-	       		</div>
-			</div>
-			<div class="b-status">
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-			</div>
-			<div class="b-game__score">
-				<fest:value output="text">
-					json.arg.player.score
-				</fest:value>
-			</div>
-		</div>
-		<div class="b-game__player b-game__player_opponent">
-			<div class="b-player b-player_opponent">
-				<div class="b-player__avatar b-player__avatar_opponent">
-					<img class="b-player__image b-player__image_opponent" src="{json.arg.opponent.get('avatar')}"/>
-				</div>
-				<div class="b-player__username b-player__username_opponent">
-					<fest:value output="text">
-	        			json.arg.opponent.name     
-	        		</fest:value>
-	        	</div>
-			</div>
-			<div class="b-status">
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-				<div class="b-status__round"></div>
-			</div>
-			<div class="b-game__score score_opponent">
-				<fest:value output="text">
-					json.arg.opponent.score
-				</fest:value>
-			</div>
-		</div>
-	</div>
+	<fest:if test="json.arg.game.mode == 0">
+		<fest:include context="json.arg.game" src="game_blitz.xml"/>
+	</fest:if>
+	<fest:if test="json.arg.game.mode == 1">
+		<fest:include context="json.arg.game" src="game_map.xml"/>
+	</fest:if>
 </fest:template>
