@@ -3,6 +3,7 @@ define(['app', 'models/game/BaseGame', 'models/game/map/Map'], function(app, Gam
         initialize: function(data) {
             Game.prototype.initialize.call(this, data);
 
+            console.log(data);
             this.map = new Map(data.map, this.getPlayers());
 
             this.listenTo(app.wsEvents, "wsPlayerTurnStart", this.onPlayerTurnStart);
@@ -12,7 +13,6 @@ define(['app', 'models/game/BaseGame', 'models/game/map/Map'], function(app, Gam
         onPlayerTurnStart: function(data) {
             var isPlayerTurn = this.player.email === data.player;
             this.trigger('playerTurnStart', {isPlayerTurn: isPlayerTurn, allowableMovies: data.allowableMove});
-
         },
         onPlayerTurnFinish: function(data) {
             this.trigger('playerTurnFinish', data);

@@ -3,11 +3,11 @@ define(['backbone'], function(Backbone) {
         value: 200,
         owner: null,
         color: null,
-        id: 0,
+        areaID: 0,
         initialize: function(options) {
             this.value = options.value;
             this.owner = options.owner;
-            this.id = options.id;
+            this.areaID = options.areaID;
         },
         setOwner: function(owner) {
             this.owner = owner;
@@ -26,7 +26,7 @@ define(['backbone'], function(Backbone) {
                     return obj.email === data[i].user;
                 })[0];
 
-                this.segments.push(new Area({value: data[i].value, owner: owner, id: data[i].id}));
+                this.segments.push(new Area({value: data[i].value, owner: owner, areaID: data[i].id}));
             }
         },
         getPlayerTerritory: function(player) {

@@ -22,6 +22,11 @@ define(['app', 'models/game/manager/GameManager', 'views/game/BaseGame','views/g
         onPlayerTurnChoose: function(data) {
             console.log(data);
         },
+        onViewUnload: function() {
+            BaseView.prototype.onViewUnload.call(this);
+            this.map.remove();
+            this.map = null;
+        },
         render: function() {
             BaseView.prototype.render.call(this);
             this.map.render();

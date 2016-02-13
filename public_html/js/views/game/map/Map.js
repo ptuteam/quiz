@@ -2,7 +2,6 @@ define(['models/game/map/Map'], function(Map) {
     var Area = Backbone.View.extend({
         area:{},
         className: 'b-map__item',
-
         initialize: function(area) {
             this.area = area;
 
@@ -15,7 +14,6 @@ define(['models/game/map/Map'], function(Map) {
     });
 
     var View = Backbone.View.extend({
-        map: null,
         mapStructure: {
             '1': 1,
             '2': 2,
@@ -24,14 +22,16 @@ define(['models/game/map/Map'], function(Map) {
             '5': 2,
             '6': 1
         },
-        el: '#map',
         events: {
-            'click': 'onItemClick'
+            'click .b-map__item': 'onItemClick'
         },
+        el: '#map',
         initialize: function(map) {
             this.map = map;
         },
         render: function() {
+            this.setElement(document.getElementById("map"));
+
             var orderNumber = 0;
 
             for (key in this.mapStructure) {
@@ -45,18 +45,11 @@ define(['models/game/map/Map'], function(Map) {
                     orderNumber++;
                 }
 
-                this.getElement().appendChild(row);
+                this.el.appendChild(row);
             }
-        },
-        getElement: function() {
-            if (this.el === undefined) {
-                this.el = document.getElementById('map');
-            }
-            return this.el;
         },
         onItemClick: function(event) {
-            console.log(event);
-            this.trigger("ItemClicked", {itemID: $(event.target).index() + 1});
+           this.trigger("ItemClicked", {itemID: event.target.getAttribute("areaid")});
         }
     });
     return View;
