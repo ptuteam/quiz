@@ -1,6 +1,9 @@
 # The Quiz Game (Triviador like)
-Turn-based strategy to check your intelligence level.
+Turn-based strategy for checking your intelligence level.
  http://park.mail.ru/
+ 
+ ![Kviz](https://i.imgur.com/vNL7yzu.png)
+ ![Kviz](https://i.imgur.com/C9jHS8y.png)
  
 ## Build Instructions
 
